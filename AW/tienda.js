@@ -4,6 +4,39 @@ let m2h=document.getElementById("menu2_sub_hombre");
 let m2mujer=document.getElementById("menu2_mujer");
 let m2m=document.getElementById("menu2_sub_mujer");
 let visi=document.getElementsByClassName("menu2_submenu_visible")
+let fecha_texto=document.getElementById("fecha");
+let banners=document.getElementsByName("img_desp")
+
+
+//Se muestra las fecha
+let fecha=new Date()
+let options = {
+    weekday: "long",
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+    };
+fecha_texto.innerHTML=fecha.toLocaleString("sp-AR", options);
+//fin    
+
+//Se agrega los eventos sobre las imagenes a las imagenes desplegables
+banners.forEach(element => {
+    
+    element.addEventListener("mouseover",(e)=>{
+        let ba=element.nextElementSibling;
+        ba.style.height="fit-content"
+        
+    })
+
+    element.addEventListener("mouseout",(e)=>{
+        let ba=element.nextElementSibling;
+        ba.style.height="0px"
+        
+    })
+});
+
+    
+
 
 m2hombre.addEventListener("click",(e)=>{
     m2h.classList.toggle("menu2_submenu_visible")
