@@ -6,6 +6,8 @@
     flex-direction: column;
     max-width: 90%;
     margin: 0 auto;
+    
+    
 }
 
 /*menu de arriba*/
@@ -28,17 +30,66 @@
         color:white;
         font-size: 1em;
     }
+    
 }
 
 /*menu principal_index*/
-.m_principal{
-    background-image: url("imagenes/B.jpg");
+.menu2{
     height: 40vh;
-    background-size: cover;
+    background-image: url("imagenes/B.jpg");
+    background-position: bottom;
+    background-size: 100% 80%;
+    background-repeat: no-repeat;
     display: flex;
-    justify-content: right;
+    justify-content: right;    
     padding-top: 3vh;
+    transition-property: background-size;
+    transition-duration: 1s;
     
+    
+    
+    .menu2_item{
+        font-weight: bold;
+        
+        span{
+            vertical-align: bottom;
+            margin-left: -10px;
+        }
+
+        :hover{
+            color:aqua;
+        }
+    }
+    
+    .menu2_sub_hombre{
+        display: flex;
+        flex-direction: column;
+        position:absolute;
+        top: ;
+        visibility: collapse;
+        
+        
+        
+        
+        background-color: red;
+        padding: 10px;
+        
+        .sub_menus{
+            
+            display: flex;
+            
+            ul{
+                list-style: none;
+            }
+        }
+
+
+        
+    }
+
+    .menu_mujer{
+        display: none;
+    }
 }
 
 /*cuerpo principal*/
