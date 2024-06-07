@@ -35,63 +35,87 @@
 
 /*menu principal_index*/
 .menu2{
-    height: 40vh;
+    height: 50vh;
     background-image: url("imagenes/B.jpg");
     background-position: bottom;
-    background-size: 100% 80%;
+    background-size: 100% 100%;
     background-repeat: no-repeat;
     display: flex;
     justify-content: right;    
-    padding-top: 3vh;
+    padding-top: 1vh;
     transition-property: background-size;
-    transition-duration: 1s;
+    transition-duration: 0.5s;
         
     .menu2_item{
         font-weight: bold;
-        margin-right: 3%;    
+        margin-right: 3%;
+        color: rgb(150,150,150);;    
+        
         span{
             vertical-align: bottom;
-            margin-left: -10px;
+            margin-left: -5px;
         }
-
-        :hover{
-            color:aqua;
-        }
+        
     }
-    
-    .menu2_sub_hombre{
+
+    .menu2_item:hover{
+        color:aqua;
+    }    
+
+    .menu2_sub_hombre,.menu2_sub_mujer{
         display: flex;
         flex-wrap: wrap;
         position:absolute;
-        visibility: visible;
+        visibility: collapse;
         margin-top: 1%;
         background-color:rgba(255, 255, 255,0.9); 
-        padding: 3%;
+        padding: 2%;
+
+        .material-symbols-outlined{
+            margin-left: 20%;
+        }
     }    
     
     .menu2_list{
-            flex-basis: 40%;
+            flex-basis: 35%;
+
+            p{
+                font-weight: normal;
+                color: rgb(150,150,150);
+                padding:10% 0 10% 0 ;
+                font-size: 0.9em;
+            }
+
+            p:first-of-type{
+                font-weight: bold;
+            }
+
         }
         
         .menu2_banner{
             background: rgb(60, 60, 60);
             color: white;
             text-align: center;
-            width: 100%;
-            padding: 5%;
+            
+            padding: 4%;
 
-            p:firsttype{
-                font-size: 2em;
+            p:first-of-type{
+                font-size: 2.3em;
+            }
+
+            p{
+                font-weight: normal;
+                font-size: 1.1em;
             }
         }
 
-
+    .menu2_submenu_visible{
+        visibility: visible;
+    }    
         
     
 
-    .menu_mujer{
-        display: none;
-    }
+    
 }
 
 /*cuerpo principal*/
