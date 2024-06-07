@@ -45,12 +45,10 @@
     padding-top: 3vh;
     transition-property: background-size;
     transition-duration: 1s;
-    
-    
-    
+        
     .menu2_item{
         font-weight: bold;
-        
+        margin-right: 3%;    
         span{
             vertical-align: bottom;
             margin-left: -10px;
@@ -63,29 +61,33 @@
     
     .menu2_sub_hombre{
         display: flex;
-        flex-direction: column;
+        flex-wrap: wrap;
         position:absolute;
-        top: ;
-        visibility: collapse;
+        visibility: visible;
+        margin-top: 1%;
+        background-color:rgba(255, 255, 255,0.9); 
+        padding: 3%;
+    }    
+    
+    .menu2_list{
+            flex-basis: 40%;
+        }
         
-        
-        
-        
-        background-color: red;
-        padding: 10px;
-        
-        .sub_menus{
-            
-            display: flex;
-            
-            ul{
-                list-style: none;
+        .menu2_banner{
+            background: rgb(60, 60, 60);
+            color: white;
+            text-align: center;
+            width: 100%;
+            padding: 5%;
+
+            p:firsttype{
+                font-size: 2em;
             }
         }
 
 
         
-    }
+    
 
     .menu_mujer{
         display: none;
