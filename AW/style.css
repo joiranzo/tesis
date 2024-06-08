@@ -1,154 +1,195 @@
-*{margin:0; padding: 0;}
-
-/*Contenedor principal*/
-.contenedor{
-    display: flex;
-    flex-direction: column;
-    max-width: 90%;
-    margin: 0 auto;
-    
-    
+:root{
+    --m1-font-size:1em;
+    --m2-font-size:1em;
+    --m2-widht:90%;
+    --m2-height:40vh;
 }
 
-/*menu de arriba*/
+*{margin:0; padding: 0;}
+
+body{
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+}
+
+/*menu1, menu de arriba*/
 .menu1{
     display: flex;
     background-color: black;
     justify-content: space-around;
+    align-items: center;
     padding: 0.8% 0 0.8% 0;
-    font-size: 100%;
-    
-    
-    .material-symbols-outlined{
-        vertical-align:bottom  ;
-        color:rgb(220,220,220);
-        font-size: 0.9rem;
-    }
-   
-
-    a{
+     
+    .material-symbols-outlined,a,p{
+        vertical-align:middle  ;
+        font-size: var(--m1-font-size);
         text-decoration: none;
-        color:white;
-        font-size: 1em;
+        color:rgb(220,220,220)
     }
-    
-}
+
+    a:hover{color:aqua;}
+
+    .carro:hover{ *{color: aqua;}} 
+}    
 
 /*menu principal_index*/
-.menu2{
-    height: 50vh;
+.menu2_cont{
+    height: var(--m2-height);
     background-image: url("imagenes/B.jpg");
     background-position: bottom;
     background-size: 100% 100%;
     background-repeat: no-repeat;
+    transition: background-size 0.5s, height 0.5s;
+    width: 100%;
     display: flex;
-    justify-content: right;    
-    padding-top: 1vh;
-    transition-property: background-size;
-    transition-duration: 0.5s;
+    justify-content:  right;
+}
+
+.menu2{
+    display: flex;
+    align-items:top; 
+    justify-content: right;
+    width:var(--m2-widht);
+    height: min-content;
+    background-color: var(--m2-bac-color);
+    padding-top: 0.5%;
+    
+}        
+
+.menu2_item{
+    height: min-content;
+    margin-right: 50px;
         
-    .menu2_item{
+    >*{
+        font-size: var(--m2-font-size);
+        color: rgb(120,120,120);
         font-weight: bold;
-        margin-right: 0.8em;
-        color: rgb(150,150,150);    
-        font-size: 0.9em;
-        
-        span{
-            vertical-align: bottom;
-            margin-left: -5px;
-        }
-        
     }
 
-    .menu2_item:hover{
-        color:aqua;
-    }    
-
-    .menu2_sub_hombre,.menu2_sub_mujer{
-        display: flex;
-        flex-wrap: wrap;
-        position:absolute;
-        visibility: collapse;
-        margin-top: 1%;
-        background-color:rgba(255, 255, 255,0.9); 
-        padding: 2%;
-
-        .material-symbols-outlined{
-            margin-left: 20%;
-        }
-    }    
+    > span{ vertical-align:top;  margin-left: -8px;}
     
-    .menu2_list{
-            flex-basis: 35%;
+    
+}     
+.menu2_item:hover{ *{ color: aqua; cursor: pointer;}} 
 
+
+.menu2_buscar{
+    display: flex;
+    border: 1px solid rgb(150,150,150);
+    margin-right: 1%;
+    align-items: center;
+    width: min-content;
+    height: min-content;
+   
+    *{
+        font-size: var(--m2-font-size);
+        color:rgb(150,150,150);        
+        height: fit-content;
+    }
+    
+    input{
+        border: none;
+        margin:0 0 0 2%; 
+    
+    }
+
+    .material-symbols-outlined{
+        vertical-align:middle;
+        cursor: pointer;
+        margin: 0 0.4em 0 0;
+    }
+}
+
+.menu2_sub_hombre,.menu2_sub_mujer{
+    display: none;
+    position: absolute;
+    /* display: flex; */
+    /* flex-direction: column; */
+    /* width: 10px;  */
+    left: 50px;
+    top:100px;
+    overflow-x: hidden; 
+    width: 1000px;
+
+    
+    /* flex-wrap: wrap; */
+    /* position:absolute;  */
+    /* visibility: visible; */
+    /* margin-top: 1%; */
+    background-color:rgba(255, 255, 255,1);
+    padding: 10px;
+    
+/*             material-symbols-outlined{*/
+        /* margin-left: 20%; */
+}
+.menu2_listas{ 
+    /* display: flex; */
+    width: 10x;
+    /* background-color: rgb(240,240,240); */
+    
+}
+        .menu2_list{
+            padding: 0 2% 0 2%;    
+            /* margin: 10%; */
+            
             p{
                 font-weight: normal;
                 color: rgb(150,150,150);
                 padding:10% 0 10% 0 ;
-                font-size: 0.9em;
+                font-size: var(--m2-font-size);
             }
 
             p:first-of-type{
                 font-weight: bold;
             }
-
         }
-        
-    .menu2_banner{
-        background: rgb(60, 60, 60);
+    
+
+.menu2_banner{
+    background: rgb(60, 60, 60);
+    padding: 1%;            
+    width: 190%;    
+    *{
         color: white;
         text-align: center;
-        
-        padding: 4%;
-
-        p:first-of-type{
-            font-size: 2.3em;
-        }
-
-        p{
-            font-weight: normal;
-            font-size: 1.1em;
-        }
+        font-weight: normal;
+    }
+    
+    p:first-of-type{
+        font-size: calc(var(--m2-font-size)*1.5);
     }
 
-    .buscar{
-        border: 1px solid;
-        border-color:rgb(150,150,150);
-        margin-right: 2%;
-        height: fit-content;
-        color:rgb(150,150,150);
-        width: max-content;
+    p{
+        font-size: calc(var(--m2-font-size)*0.9);
+        text-align: center;
         
-        input{
-            display: block;
-            border: none;
-            font-size: 0.4vw;    
-            width: auto;
-            
-            color:rgb(150,150,150);
-            font-weight: bold;
-            padding-left: 2%;
-            height: auto;
-            background: red;
-        }
-
-        .material-symbols-outlined{
-            
-            vertical-align: bottom;
-            cursor: pointer;
-            font-size: 1.8vw;    
-
-
-        }
     }
+                    
+}
+            
+    
 
-    .menu2_submenu_visible{
-        visibility: visible;
-    }    
+
+.menu2_submenu_visible{
+    width: fit-content;
 }
 
+      
+    
+
+
+   
+
+span:first-of-type{
+    /* color: aqua; */
+}
+    
+
+            
+        
 /*cuerpo principal*/
-.cuerpo{
+/* .cuerpo{
     margin: 0 auto;
     width: 90%;
     display: flex;
@@ -157,7 +198,7 @@
     border-top: 1px solid rgb(200,200,200);
 
     /*menu del cuerpo*/
-    .menu3{
+    /*.menu3{
         display: flex;
     
         p{
@@ -237,7 +278,7 @@
             }
         }    
     }
-}
+} */
 
 .menu4{
     display: flex;
@@ -270,3 +311,19 @@
 .menu6{
     background-image: url("imagenes/collage-COLORES.png");
 }
+
+@media only screen and (max-width: 800px) {
+    
+    :root{
+        --m1-font-size:0.9em;
+        --m2-widht:100%;
+        --m2-font-size:0.9rem;
+        --m2-height: 20vh;
+    }
+}*/
+
+/* @media only screen and (min-width: 576px) {
+    :root{
+        --m2-back-color: green;
+    }
+} */

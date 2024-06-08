@@ -5,9 +5,9 @@ let m2mujer=document.getElementById("menu2_mujer");
 let m2m=document.getElementById("menu2_sub_mujer");
 let visi=document.getElementsByClassName("menu2_submenu_visible")
 let fecha_texto=document.getElementById("fecha");
-let banners=document.getElementsByName("img_desp");
-let relojs=document.getElementById("reloj");
-let bod=document.getElementsByTagName("body")
+// let banners=document.getElementsByName("img_desp");
+// let relojs=document.getElementById("reloj");
+// let bod=document.getElementsByTagName("body")
 
 
 //Se muestra las fecha
@@ -22,20 +22,20 @@ fecha_texto.innerHTML=fecha.toLocaleString("sp-AR", options);
 //fin    
 
 //Se agrega los eventos sobre las imagenes a las imagenes desplegables
-banners.forEach(element => {
+// banners.forEach(element => {
     
-    element.addEventListener("mouseover",(e)=>{
-        let ba=element.nextElementSibling;
-        ba.style.height="fit-content"
+//     element.addEventListener("mouseover",(e)=>{
+//         let ba=element.nextElementSibling;
+//         ba.style.height="fit-content"
         
-    })
+//     })
 
-    element.addEventListener("mouseout",(e)=>{
-        let ba=element.nextElementSibling;
-        ba.style.height="0px"
+//     element.addEventListener("mouseout",(e)=>{
+//         let ba=element.nextElementSibling;
+//         ba.style.height="0px"
         
-    })
-});
+//     })
+// });
 //Fin
 
 
@@ -65,11 +65,12 @@ function mueveReloj(){
     setTimeout("mueveReloj()",1000)
 }    
 
-bod.addEventListener("onLoad",mueveReloj())
+// bod.addEventListener("onLoad",mueveReloj())
 
 m2hombre.addEventListener("click",(e)=>{
+    
     m2h.classList.toggle("menu2_submenu_visible")
-    limpiar(m2h);
+    // limpiar(m2h);
     if (m2h.classList.contains("menu2_submenu_visible"))
         m2.style.backgroundSize="100% 85%"
     else
