@@ -5,7 +5,9 @@ let m2mujer=document.getElementById("menu2_mujer");
 let m2m=document.getElementById("menu2_sub_mujer");
 let visi=document.getElementsByClassName("menu2_submenu_visible")
 let fecha_texto=document.getElementById("fecha");
-let banners=document.getElementsByName("img_desp")
+let banners=document.getElementsByName("img_desp");
+let relojs=document.getElementById("reloj");
+let bod=document.getElementsByTagName("body")
 
 
 //Se muestra las fecha
@@ -34,9 +36,36 @@ banners.forEach(element => {
         
     })
 });
+//Fin
 
-    
 
+
+function mueveReloj(){
+    momentoActual = new Date()
+    hora = momentoActual.getHours()
+    minuto = momentoActual.getMinutes()
+    segundo = momentoActual.getSeconds()
+
+    str_segundo = new String (segundo)
+    if (str_segundo.length == 1)
+       segundo = "0" + segundo
+
+    str_minuto = new String (minuto)
+    if (str_minuto.length == 1)
+       minuto = "0" + minuto
+
+    str_hora = new String (hora)
+    if (str_hora.length == 1)
+       hora = "0" + hora
+
+    horaImprimible = hora + " : " + minuto + " : " + segundo
+
+    relojs.innerHTML = horaImprimible
+
+    setTimeout("mueveReloj()",1000)
+}    
+
+bod.addEventListener("onLoad",mueveReloj())
 
 m2hombre.addEventListener("click",(e)=>{
     m2h.classList.toggle("menu2_submenu_visible")

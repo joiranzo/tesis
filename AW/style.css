@@ -201,20 +201,17 @@
         
         .banner{
             display: block;
-            font-size: 1.4em;
+            font-size: 1.1em;
             text-align: center;
             background-color:rgb(250,250,250);
-            
             padding-bottom: 2%;
             height: 0px;
-            
             overflow-y: hidden;
             transition: height;
             transition-duration: 0.5s;
             
             p{
                 padding:  2% 0 2% 0;
-                
             }
 
             .material-symbols-outlined{
@@ -225,36 +222,51 @@
                 margin-left: 1%;    
             }
         }    
+                
+        .item_3, .item_4 {
+            flex-basis: 48%;
+            padding: 1%;
+            max-height: min;
         
-       
-        
-        .item_3 {
-            flex-basis: 50%;
+
+            >p{
+                color:rgb(100,100,100);
+                display: block;
+                position: absolute;
+                margin-left: 0.8%;
+            }
         }    
-        
-
     }
-
-    .item_4 {
-        flex-basis: 50%;
-    }    
-     
-    .item_5 {
-        flex-basis: 25%;
-    }    
-    
-    .item_6 {
-        flex-basis: 25%;
-    }    
 }
 
-.sub_menu{
+.menu4{
     display: flex;
     justify-content: space-around;
 
-    .menu_vertical{
+    .menu4_vertical{
         display: flex;
         flex-direction: column;
+        justify-content: space-around;
+        height: 30vh;
+        padding: 0 1% 0 1%;
+        
+        a{
+            text-decoration: none;
+            color: rgb(150,150,150);
+            
+        }
+
+        a:first-of-type{
+            font-weight: bold;
+        }
     }
 }
 
+.menu5{
+    background-color:aqua ;
+    padding: 2%;
+}
+
+.menu6{
+    background-image: url("imagenes/collage-COLORES.png");
+}
