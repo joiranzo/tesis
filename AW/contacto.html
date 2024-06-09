@@ -1,155 +1,168 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tienda de Ropa - Contacto</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <title>Tienda de ropa</title>
 </head>
+<style>
+
+</style>
 
 <body>
-    
-    <div class="contenedor">
-        <div class="menu1">
-            <a href="http://" target="_blank" rel="noopener noreferrer">Registro</a>
-            <a href="http://" target="_blank" rel="noopener noreferrer">Iniciar sesión</a>
-            <div class="carro">
-                <a href="http://" target="_blank" rel="noopener noreferrer">
-                    <span class="material-symbols-outlined">shopping_cart</span>Carrito</a>
-            </div>
-            
+    <!-- Menu principal -->
+    <div class="menu1">
+        <a href="#" target="_blank" rel="noopener noreferrer">Registro</a>
+        <a href="#" target="_blank" rel="noopener noreferrer">Iniciar sesión</a>
+        <div class="carro">
+            <span class="material-symbols-outlined">shopping_cart</span>
+            <a href="#" target="_blank" rel="noopener noreferrer">Carrito</a>
         </div>
+        
+    </div>
 
-        <!-- Menu sobre la imagen -->
-        <div class="menu2 menu6" id="menu2">
+    <!-- Menu secundario -->
+    <div class="menu2_cont">
+       <div class="menu2" id="menu2">
             <div class="menu2_item">
-                <p id="menu2_hombre">Hombre
-                    <span class="material-symbols-outlined">keyboard_arrow_down</span>
-                </p>
-                <!-- <div class="menu2_sub_hombre" id="menu2_sub_hombre">
-                    <div class="menu2_list">
-                        <p>Casual <span class="material-symbols-outlined">keyboard_arrow_down</span>
-                        </p>
-                        <p>Abrigos</p>
-                        <p>Deportivos</p>
-                        <p>Pantalones</p>
-                        <p>Remeras</p>
-                    </div>
-                    <div class="menu2_list">
-                        <p>Formal <span class="material-symbols-outlined">keyboard_arrow_down</span>
-                        </p>
-                        <p>Chaquetas</p>
-                        <p>Camisetas</p>
-                        <p>Trajes</p>
-                        <p>Pantalones</p>
-                    </div>
-                    <div class="menu2_banner">
-                        <p>Ofertas de Invierno</p>
-                        <p>Desde el 50% de descuento</p>
-                    </div>
-                </div> -->
+                <a id="menu2_hombre">Hombre</a>
+                <span class="material-symbols-outlined">keyboard_arrow_down</span>
             </div>
-
             <div class="menu2_item">
-                <p id="menu2_mujer">Mujer
-                    <span class="material-symbols-outlined">keyboard_arrow_down</span>
-                </p>
-                <!-- <div class="menu2_sub_mujer" id="menu2_sub_mujer">
-                    <div class="menu2_listas">
-                        <div class="menu2_list">
-                            <p>Casual <span class="material-symbols-outlined">keyboard_arrow_down</span>
-                            </p>
-                            <p>Remeras</p>
-                            <p>Bikinis</p>
-                            <p>Juvenil</p>
-                            <p>Deportivo</p>
-                        </div>
-                        <div class="menu2_list">
-                            <p>Formal/Noche<span class="material-symbols-outlined">keyboard_arrow_down</span>
-                            </p>
-
-                            <p>Vestidos</p>
-                            <p>Accesorios</p>
-                            <p>Trajes</p>
-                            <p>Nueva Temporada</p>
-                        </div>
-                    </div>    
-                    <div class="menu2_banner">
-                        <p>Ofertas de Otoño</p>
-                        <p>Desde el 50% de descuento</p>
-                    </div>
-                </div> -->
+                <a id="menu2_mujer">Mujer</a>
+                <span class="material-symbols-outlined">keyboard_arrow_down</span>
             </div>
-
             <div class="menu2_item">
-                <p>Nosotros</p>
+                <a>Nosotros</a>
             </div>
-
             <div class="menu2_item">
-                <P>Novedades</P>
+                <a>Novedades</a>
             </div>
-
             <div class="menu2_item">
-                <P>Contacto</P>
+                <a>Contacto</a>
             </div>
-
-            <div class="buscar">
-                <input type="text" placeholder="Buscar">
+            <div class="menu2_buscar">
+                <input type="text" placeholder="Buscar" size="7">
                 <span class="material-symbols-outlined">search</span>
-                </dim>
             </div>
         </div>    
+    </div>        
+    
+    <div class="menu2_sub" id="menu2_sub_hombre">
+        <div class="menu2_list">
+            <span>Casual</span>
+            <span class="material-symbols-outlined">keyboard_arrow_down</span>
+            <p>Abrigos</p>
+            <p>Deportivos</p>
+            <p>Pantalones</p>
+            <p>Remeras</p>
+        </div>
+        <div class="menu2_list">
+            <span>Formal</span>
+            <span class="material-symbols-outlined">keyboard_arrow_down</span>
+            <p>Chaquetas</p>
+            <p>Camisetas</p>
+            <p>Trajes</p>
+            <p>Pantalones</p>
+        </div>
+    
+        <div class="menu2_banner">
+            <p>Ofertas de Invierno</p>
+            <p>Desde el 50% de descuento</p>
+        </div>
+    </div>    
+    
+    <div class="menu2_sub"  id="menu2_sub_mujer">
+        <div class="menu2_list">
+            <Span>Casual</Span>
+            <span class="material-symbols-outlined">keyboard_arrow_down</span>
+            <p>Remeras</p>
+            <p>Bikinis</p>
+            <p>Juvenil</p>
+            <p>Deportivo</p>
+        </div>
+        <div class="menu2_list">
+            <span>Formal/Noche</span>
+            <span class="material-symbols-outlined">keyboard_arrow_down</span>
+            
 
-        <div class="cuerpo">
-
-          
+            <p>Vestidos</p>
+            <p>Accesorios</p>
+            <p>Trajes</p>
+            <p>Nueva Temporada</p>
+        </div>
+        <div class="menu2_banner">
+            <p>Ofertas de Otoño</p>
+            <p>Desde el 50% de descuento</p>
+        </div>
+    </div> 
+    <div class="cuerpo">
+        <div class="formularios">
+            <form class="form">
+                <span>Si ya tenes registrada una cuenta con nosotros!</span>
+                <input type="mail" placeholder="Email" class="acti">
+                <input type="password" placeholder="Clave" class="acti">
+                <button>INGRESAR</button>
+            </form>
+            <form class="form">
+                <span>Si sos un usuario nuevo!</span>
+                <input type="mail" placeholder="Email" class="acti">
+                <input type="password" placeholder="Clave" class="acti">
+                <input type="password" placeholder="Confirma tu clave" class="acti">
+                <button>CREAR CUENTA</button>
+            </form>
+        </div>
+        <div class="menu4">
+            <div class="menu4_vertical">
+                <a href="">Información</a>
+                <a href="">Nosotros</a>
+                <a href="">Sucursales</a>
+                <a href="">Marcas</a>
+                <a href="">Mapa del Sitio</a>
+            </div>
+            <div class="menu4_vertical">
+                <a href="">Porqué comprar</a>
+                <a href="">Envíos internacionales</a>
+                <a href="">Compras seguras</a>
+                <a href="">Testimonios</a>
+                <a href="">Mayoristas</a>
+            </div>
+            <div class="menu4_vertical">
+                <a href="">Tu cuenta</a>
+                <a href="">Tus descuentos</a>
+                <a href="">Seguimientos</a>
+                <a href="">Favoritos</a>
+                <a href="">Historial</a>
+            </div>
+            <div class="menu4_vertical">
+                <a href="">Noticias</a>
+                <a href="">Nuevas sucusales</a>
+                <a href="">Ofertas y descuentos</a>
+                <a href="">Día de la madre</a>
+                <a href="">Temporada 2022/2023</a>
+            </div>
+            <div class="menu4_vertical">
+                <a href="">Servicios</a>
+                <a href="">Asesoramiento online</a>
+                <a href="">Bolsa de trabajo</a>
+                <a href="">Catalogo online</a>
+                <a href="">Guardaría</a>
+            </div>
         </div>
 
-            <div class="menu4">
-                <div class="menu4_vertical">
-                    <a href="">Información</a>
-                    <a href="">Nosotros</a>
-                    <a href="">Sucursales</a>
-                    <a href="">Marcas</a>
-                    <a href="">Mapa del Sitio</a>
-                </div>
-                <div class="menu4_vertical">
-                    <a href="">Porqué comprar</a>
-                    <a href="">Envíos internacionales</a>
-                    <a href="">Compras seguras</a>
-                    <a href="">Testimonios</a>
-                    <a href="">Mayoristas</a>
-                </div>
-                <div class="menu4_vertical">
-                    <a href="">Tu cuenta</a>
-                    <a href="">Tus descuentos</a>
-                    <a href="">Seguimientos</a>
-                    <a href="">Favoritos</a>
-                    <a href="">Historial</a>
-                </div>
-                <div class="menu4_vertical">
-                    <a href="">Noticias</a>
-                    <a href="">Nuevas sucusales</a>
-                    <a href="">Ofertas y descuentos</a>
-                    <a href="">Día de la madre</a>
-                    <a href="">Temporada 2022/2023</a>
-                </div>
-                <div class="menu4_vertical">
-                    <a href="">Servicios</a>
-                    <a href="">Asesoramiento online</a>
-                    <a href="">Bolsa de trabajo</a>
-                    <a href="">Catalogo online</a>
-                    <a href="">Guardaría</a>
-                </div>
-            </div>
-
-            <div class="menu5">
-                <p id="reloj">RELOJ</p>
-            </div>
+        <div class="menu5">
+            <img src="https://img.icons8.com/?size=80&id=85024&format=png&color=FFFFFF" alt="" srcset="">
+            <img src="https://img.icons8.com/?size=80&id=60014&format=png&color=FFFFFF" alt="" srcset="">
+            <img src="https://img.icons8.com/?size=80&id=47872&format=png&color=FFFFFF" alt="">
+            <img src="https://img.icons8.com/?size=80&id=rGdaQouhQlZw&format=png&color=FFFFFF" alt="">
+            <span id="reloj"></span>
         </div>
+    </div>     
 </body>
 <script src="tienda.js"></script>
+
 </html>

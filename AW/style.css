@@ -116,7 +116,7 @@ body{
     opacity: 0;
     transition: opacity 0.5s;
     visibility: hidden;
-    
+    z-index: 10;
 }
 
 .menu2_list{
@@ -276,15 +276,75 @@ body{
         }
     }
 }
-/*
+
 .menu5{
+    
     background-color:aqua ;
-    padding: 2%;
+    
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    
+    span{
+        color: white;
+        font-weight: bolder;
+        margin-right: 2%;
+    }
+    
+    img{
+        scale: 0.6        ;
+    }
 }
 
-.menu6{
-    background-image: url("imagenes/collage-COLORES.png");
-} */
+.formularios{
+    display: flex;
+
+    .form{
+        flex-basis: 50%;
+        display: flex;
+        flex-direction: column;
+        padding: 2%;
+
+        span{
+            font-size: valr(--sub-font-size);
+            color: rgb(100,100,100);
+            font-weight: bold;
+        }
+
+        input{
+            margin-top: 5%;
+            font-size: var(--sub-font-size);
+            height: 1.8em;
+            border-color: rgb(150,150,150);
+            border-style:solid;
+            border-width: 1px;
+            padding-left: 2%;
+            outline-color: red;
+        }
+
+        button{
+            margin-top: 5%;
+            padding: 3%;
+            background-color: transparent;
+            border-style:solid;
+            font-size: var(--but-font-size);
+            color: rgb(100,100,100);
+            border-color: rgb(130,130,130);
+            width: fit-content;
+            border-width: 1px;
+        }
+
+        button:hover{
+            background-color: rgb(100,100,100);
+            color: rgb(240,240,240);    
+        }
+    }
+
+    .form2{
+        background-color: yellow;
+        flex-basis: 50%;
+    }
+}
 
 @media only screen and (max-width: 800px) {
     
@@ -296,11 +356,7 @@ body{
         --sub-font-size:0.8em;
         --sub-width:33vw;
         --img-font-size:0.6em;
+        --but-font-size:0.7em;
     }
 }
 
-/* @media only screen and (min-width: 576px) {
-    :root{
-        --m2-back-color: green;
-    }
-} */

@@ -3,11 +3,12 @@ let m2=document.getElementById("menu2");
 let m2h=document.getElementById("menu2_sub_hombre");
 let m2mujer=document.getElementById("menu2_mujer");
 let m2m=document.getElementById("menu2_sub_mujer");
-let visi=document.getElementsByClassName("menu2_submenu_visible")
+let visi=document.getElementsByClassName("visible")
 let fecha_texto=document.getElementById("fecha");
 let banners=document.getElementsByName("img_desp");
-// let relojs=document.getElementById("reloj");
-// let bod=document.getElementsByTagName("body")
+let inputs=document.getElementsByClassName("acti")
+let relojs=document.getElementById("reloj");
+
 
 
 //Se muestra las fecha
@@ -18,7 +19,7 @@ let options = {
     month: "long",
     day: "numeric",
     };
-fecha_texto.innerHTML=fecha.toLocaleString("sp-AR", options);
+    if (fecha_texto!=null) fecha_texto.innerHTML=fecha.toLocaleString("sp-AR", options);
 //fin    
 
 // Se agrega los eventos sobre las imagenes a las imagenes desplegables
@@ -36,9 +37,30 @@ banners.forEach(element => {
         
     })
 });
-Fin
+//Fin
 
+// Se alegra el evento y ajuste al recibir el foco los inputs
+for (const key in inputs) {
+    if (Object.hasOwnProperty.call(inputs, key)) {
+        const element = inputs[key];
+        
+        element.addEventListener("focus",(e)=>{ element.style.backgroundColor = "rgb(255,240,240)";})
+        element.addEventListener("blur",(e)=>{ element.style.backgroundColor = "rgb(255,255,255)";})
+    }
+}
+// inputs.forEach(element => {
+    
+    
 
+    // element.addEventListener("mouseout",(e)=>{
+        // let ba=element.nextElementSibling;
+        // ba.style.height="0px"
+        
+    // })
+// });
+//Fin
+
+window.addEventListener("load", mueveReloj())
 
 function mueveReloj(){
     momentoActual = new Date()
@@ -59,34 +81,40 @@ function mueveReloj(){
        hora = "0" + hora
 
     horaImprimible = hora + " : " + minuto + " : " + segundo
-
     relojs.innerHTML = horaImprimible
-
     setTimeout("mueveReloj()",1000)
 }    
 
-// bod.addEventListener("onLoad",mueveReloj())
+
 
 m2hombre.addEventListener("click",(e)=>{
-    m2h.style.left=e.clientX.toString()+"px"
-    m2h.style.top=(e.clientY+20).toString()+"px"
-    m2h.classList.toggle("visible")
-    // limpiar(m2h);
     if (m2h.classList.contains("visible"))
-        m2.style.backgroundSize="100% 85%"
-    else
-        m2.style.backgroundSize="100% 100%"
+        m2h.classList.remove("visible")
+    else{
+        m2h.style.left=e.clientX.toString()+"px"
+        m2h.style.top=(e.clientY+20).toString()+"px"
+        limpiar(m2h);
+        m2h.classList.toggle("visible")
+    }
 });
 
 m2mujer.addEventListener("click",(e)=>{
-    m2m.style.left=e.clientX.toString()+"px"
-    m2m.style.top=(e.clientY+20).toString()+"px"
-    m2m.classList.toggle("visible")
-    //limpiar(m2m);
     if (m2m.classList.contains("visible"))
-        m2.style.backgroundSize="100% 85%"
-    else
-        m2.style.backgroundSize="100% 100%"
+        m2m.classList.remove("visible")
+    else{
+        m2m.style.left=e.clientX.toString()+"px"
+        m2m.style.top=(e.clientY+20).toString()+"px"
+        limpiar(m2m);
+        m2m.classList.toggle("visible")
+    }
+})
+
+m2h.addEventListener("click",(e)=>{
+    m2h.classList.remove("visible")
+})
+
+m2m.addEventListener("click",(e)=>{
+    m2m.classList.remove("visible")
 })
 
 function limpiar(fuente){
@@ -95,7 +123,7 @@ function limpiar(fuente){
    for (const key in visi) {
     if (Object.hasOwnProperty.call(visi, key)) {
         const element = visi[key];
-        if (fuente!=element) element.classList.remove("menu2_submenu_visible")
+        element.classList.remove("visible")
         
     }
    }
