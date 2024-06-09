@@ -48,17 +48,6 @@ for (const key in inputs) {
         element.addEventListener("blur",(e)=>{ element.style.backgroundColor = "rgb(255,255,255)";})
     }
 }
-// inputs.forEach(element => {
-    
-    
-
-    // element.addEventListener("mouseout",(e)=>{
-        // let ba=element.nextElementSibling;
-        // ba.style.height="0px"
-        
-    // })
-// });
-//Fin
 
 window.addEventListener("load", mueveReloj())
 
@@ -81,8 +70,10 @@ function mueveReloj(){
        hora = "0" + hora
 
     horaImprimible = hora + " : " + minuto + " : " + segundo
-    relojs.innerHTML = horaImprimible
-    setTimeout("mueveReloj()",1000)
+    if (relojs!=null) {
+         relojs.innerHTML = horaImprimible
+         setTimeout("mueveReloj()",1000)
+    }     
 }    
 
 

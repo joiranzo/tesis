@@ -45,24 +45,26 @@ body{
     background-repeat: no-repeat;
     transition: background-size 0.5s, height 0.5s;
     width: 100%;
-    display: flex;
-    justify-content:  right;
+    
+    
 }
 
 .menu2{
     display: flex;
     align-items:top; 
-    justify-content: space-evenly;
+    justify-content: right;;
     width:var(--m2-widht);
     height: min-content;
     background-color: var(--m2-bac-color);
     padding-top: 0.5%;
+    margin-bottom: 1%;
     
 }        
 
 .menu2_item{
     height: min-content;
-    
+    margin:0 1% 0 1%;
+
         
     >*{
         font-size: var(--m2-font-size);
@@ -346,12 +348,29 @@ body{
     }
 }
 
+.menu6{
+    background-color: black;
+    height: var(--m2-height);
+    
+}
+
+.contacto{
+    opacity: 0.5;
+    height: 100%;
+    width: 100%;
+    background-image: url("imagenes/collage-COLORES.png");
+    background-size: 100% 150%;
+    background-repeat: no-repeat;
+    background-position: center;
+    
+}
+
 @media only screen and (max-width: 800px) {
     
     :root{
         --m1-font-size:0.9em;
         --m2-widht:100%;
-        --m2-font-size:0.9rem;
+        --m2-font-size:0.8em;
         --m2-height: 20vh;
         --sub-font-size:0.8em;
         --sub-width:33vw;
