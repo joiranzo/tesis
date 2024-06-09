@@ -5,7 +5,7 @@ let m2mujer=document.getElementById("menu2_mujer");
 let m2m=document.getElementById("menu2_sub_mujer");
 let visi=document.getElementsByClassName("menu2_submenu_visible")
 let fecha_texto=document.getElementById("fecha");
-// let banners=document.getElementsByName("img_desp");
+let banners=document.getElementsByName("img_desp");
 // let relojs=document.getElementById("reloj");
 // let bod=document.getElementsByTagName("body")
 
@@ -21,22 +21,22 @@ let options = {
 fecha_texto.innerHTML=fecha.toLocaleString("sp-AR", options);
 //fin    
 
-//Se agrega los eventos sobre las imagenes a las imagenes desplegables
-// banners.forEach(element => {
+// Se agrega los eventos sobre las imagenes a las imagenes desplegables
+banners.forEach(element => {
     
-//     element.addEventListener("mouseover",(e)=>{
-//         let ba=element.nextElementSibling;
-//         ba.style.height="fit-content"
+    element.addEventListener("mouseover",(e)=>{
+        let ba=element.nextElementSibling;
+        ba.style.height="fit-content"
         
-//     })
+    })
 
-//     element.addEventListener("mouseout",(e)=>{
-//         let ba=element.nextElementSibling;
-//         ba.style.height="0px"
+    element.addEventListener("mouseout",(e)=>{
+        let ba=element.nextElementSibling;
+        ba.style.height="0px"
         
-//     })
-// });
-//Fin
+    })
+});
+Fin
 
 
 
@@ -68,20 +68,22 @@ function mueveReloj(){
 // bod.addEventListener("onLoad",mueveReloj())
 
 m2hombre.addEventListener("click",(e)=>{
-    
-    m2h.classList.toggle("menu2_submenu_visible")
+    m2h.style.left=e.clientX.toString()+"px"
+    m2h.style.top=(e.clientY+20).toString()+"px"
+    m2h.classList.toggle("visible")
     // limpiar(m2h);
-    if (m2h.classList.contains("menu2_submenu_visible"))
+    if (m2h.classList.contains("visible"))
         m2.style.backgroundSize="100% 85%"
     else
         m2.style.backgroundSize="100% 100%"
 });
 
 m2mujer.addEventListener("click",(e)=>{
-    
-    m2m.classList.togle("menu2_submenu_visible")
-    limpiar(m2m);
-    if (m2m.classList.contains("menu2_submenu_visible"))
+    m2m.style.left=e.clientX.toString()+"px"
+    m2m.style.top=(e.clientY+20).toString()+"px"
+    m2m.classList.toggle("visible")
+    //limpiar(m2m);
+    if (m2m.classList.contains("visible"))
         m2.style.backgroundSize="100% 85%"
     else
         m2.style.backgroundSize="100% 100%"
