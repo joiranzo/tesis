@@ -1,5 +1,5 @@
 let m2hombre=document.getElementById("menu2_hombre");
-let m2=document.getElementById("menu2");
+let m2=document.getElementById("menu_despl");
 let m2h=document.getElementById("menu2_sub_hombre");
 let m2mujer=document.getElementById("menu2_mujer");
 let m2m=document.getElementById("menu2_sub_mujer");
@@ -79,34 +79,33 @@ function mueveReloj(){
 
 
 m2hombre.addEventListener("click",(e)=>{
-    if (m2h.classList.contains("visible"))
+    if (m2h.classList.contains("visible")){
         m2h.classList.remove("visible")
+        if (m2!=null) m2.style.backgroundSize="100% 100%"}
     else{
-        m2h.style.left=e.clientX.toString()+"px"
-        m2h.style.top=(e.clientY+20).toString()+"px"
         limpiar(m2h);
+        if (m2!=null) m2.style.backgroundSize="100% 85%"
         m2h.classList.toggle("visible")
     }
 });
 
 m2mujer.addEventListener("click",(e)=>{
-    if (m2m.classList.contains("visible"))
+    if (m2m.classList.contains("visible")){
         m2m.classList.remove("visible")
+        if (m2!=null) m2.style.backgroundSize="100% 100%"}
     else{
-        m2m.style.left=e.clientX.toString()+"px"
-        m2m.style.top=(e.clientY+20).toString()+"px"
         limpiar(m2m);
+        if (m2!=null) m2.style.backgroundSize="100% 85%"
         m2m.classList.toggle("visible")
     }
 })
 
-m2h.addEventListener("click",(e)=>{
+function cerrar_menu(){
+    m2h.style.top="-400px";
     m2h.classList.remove("visible")
-})
-
-m2m.addEventListener("click",(e)=>{
+    m2m.style.top="-400px";
     m2m.classList.remove("visible")
-})
+}
 
 function limpiar(fuente){
     //Oculta todos los menus que se encuentran visibles
