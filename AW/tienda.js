@@ -105,6 +105,7 @@ function cerrar_menu(){
     m2h.classList.remove("visible")
     m2m.style.top="-400px";
     m2m.classList.remove("visible")
+    m2.style.backgroundSize="100% 100%"
 }
 
 function limpiar(fuente){
