@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="stylo.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 </head>
-<body>
+<body onload=carga()>
     
     <div class="menu1">
         <div class="conta">
@@ -20,6 +20,7 @@
                 info@compras.com.ar
             </div> 
         </div>
+        <div id="fecha">Fecha</div>
         <div class="redes"> 
   
             
@@ -30,34 +31,48 @@
             <img src="Imagenes/icons8-google-plus-90.png" alt="" srcset="">    
         </div>
     </div>    
-    <nav class="menu2">
-        <div class="vertical-center menu_item">
-            <span class="material-symbols-outlined">person</span>
-            CUENTA
-        </div> 
-        <div class="vertical-center menu_item">
-            <span class="material-symbols-outlined">star</span>
-            VENTAS
+    <div class="menu8">
+        <div class="reloj" id="reloj">
+        Reloj    
         </div>
-        <div class="vertical-center menu_item">
-            <span class="material-symbols-outlined">adjust</span>
-            RESUMEN
-        </div>
-        <div class="vertical-center menu_item">
-            <span class="material-symbols-outlined">shopping_cart</span>
-            COMPRADOS
-        </div>
-        <div class="vertical-center menu_item">
-            <span class="material-symbols-outlined">lock</span>
-            INGRESAR
-        </div>   
-    </nav>
+        <nav class="menu2">
+            <div class="vertical-center menu_item">
+                <span class="material-symbols-outlined">person</span>
+                CUENTA
+            </div> 
+            <div class="vertical-center menu_item">
+                <span class="material-symbols-outlined">star</span>
+                VENTAS
+            </div>
+            <div class="vertical-center menu_item">
+                <span class="material-symbols-outlined">adjust</span>
+                RESUMEN
+            </div>
+            <div class="vertical-center menu_item">
+                <span class="material-symbols-outlined">shopping_cart</span>
+                COMPRADOS
+            </div>
+            <div class="vertical-center menu_item" onclick=mostrar()>
+                <span class="material-symbols-outlined">lock</span>
+                INGRESAR
+            </div>   
+        </nav>
+    </div>
     <div class="cuerpo">
+        <H3>CATEGORIAS</H3>
+        <div class="relle"></div>
+        <H3>ARTICULOS</H3>
+        <div class="relle"></div>
         <div class="menu3">     
-            <H3>CATEGORIAS</H3>
-            <span>DEPORTES</span>
-            <span>HOMBRES</span>
-            <span>MUJERES</span>
+            <div class="menu_item">
+                DEPORTES<span>+</span>
+            </div>
+            <div class="menu_item">
+                HOMBRES<span>+</span>
+            </div>
+            <div class="menu_item">
+                MUJERES<span>+</span>
+            </div>
             <span>NIÑOS</span>
             <span>MODA</span>
             <span>HOGAR</span>
@@ -74,11 +89,15 @@
                 Añadir carrito
             </button>
             <div class="menu4">
-                <span class="material-symbols-outlined">add_box</span>
-                ANADIR A FAVORITOS
-                <span class="material-symbols-outlined">add_box</span>
-                COMPRAR PRECIOS
-            </div>    
+                <div class="menu_item">
+                    <span>+</span>
+                    ANADIR A FAVORITOS
+                </div>
+                <div class="menu_item">
+                    <span>+</span>
+                    COMPARAR PRECIOS
+                </div>
+            </div>
         </div>
         <div class="articulo">
             <img src="Imagenes/product2.jpg" alt="" srcset="">
@@ -88,11 +107,15 @@
                 Añadir carrito
             </button>
             <div class="menu4">
-                <span class="material-symbols-outlined">add_box</span>
-                ANADIR A FAVORITOS
-                <span class="material-symbols-outlined">add_box</span>
-                COMPRAR PRECIOS
-            </div>    
+                <div class="menu_item">
+                    <span>+</span>
+                    ANADIR A FAVORITOS
+                </div>
+                <div class="menu_item">
+                    <span>+</span>
+                    COMPARAR PRECIOS
+                </div>
+            </div>
         </div>
         <div class="articulo">
             <img src="Imagenes/product3.jpg" alt="" srcset="">
@@ -102,97 +125,173 @@
                 Añadir carrito
             </button>
             <div class="menu4">
-                <span class="material-symbols-outlined">add_box</span>
-                ANADIR A FAVORITOS
-                <span class="material-symbols-outlined">add_box</span>
-                COMPRAR PRECIOS
+                <div class="menu_item">
+                    <span>+</span>
+                    ANADIR A FAVORITOS
+                </div>
+                <div class="menu_item">
+                    <span>+</span>
+                    COMPARAR PRECIOS
+                </div>
+            </div>  
+        </div>
+        <div class="menu7">    
+            <h3>MARCAS</h3>
+            <span>NIKE</span><span>(50)</span>
+            <span>ADIDAS</span><span>(56)</span>
+            <span>SARKANY</span><span>(32)</span>
+            <span>PUMA</span><span>(5)</span>
+            <span>DIOR</span><span>(9)</span>
+            <span>LOLA ROCA</span><span>(4)</span>
+        </div>    
+        <div class="articulo">
+            <img src="Imagenes/product4.jpg" alt="" srcset="">
+            <h2>$ 1050</h2>
+            <button>
+                <span class="material-symbols-outlined">shopping_cart</span>
+                Añadir carrito
+            </button>
+            <div class="menu4">
+                <div class="menu_item">
+                    <span>+</span>
+                    ANADIR A FAVORITOS
+                </div>
+                <div class="menu_item">
+                    <span>+</span>
+                    COMPARAR PRECIOS
+                </div>
             </div>    
         </div>
-        <div class="menu3">    
-            <h2>MARCAS</h2>
-            <span>NIKE    (50)</span>
+        <div class="articulo">
+            <img src="Imagenes/product5.jpg" alt="" srcset="">
+            <h2>$ 580</h2>
+            <button>
+                <span class="material-symbols-outlined">shopping_cart</span>
+                Añadir carrito
+            </button>
+            <div class="menu4">
+                <div class="menu_item">
+                    <span>+</span>
+                    ANADIR A FAVORITOS
+                </div>
+                <div class="menu_item">
+                    <span>+</span>
+                    COMPARAR PRECIOS
+                </div>
+            </div>
+        </div>
+        <div class="articulo">
+            <img src="Imagenes/product6.jpg" alt="" srcset="">
+            <h2>$ 350</h2>
+            <button>
+                <span class="material-symbols-outlined">shopping_cart</span>
+                Añadir carrito
+            </button>
+            <div class="menu4">
+                <div class="menu_item">
+                    <span>+</span>
+                    ANADIR A FAVORITOS
+                </div>
+                <div class="menu_item">
+                    <span>+</span>
+                    COMPARAR PRECIOS
+                </div>
+            </div>    
+        </div>
+    </div>
+    <div class="cuerpo2">
+        <div class="menu1">
+            <span>REMERAS</span>
+            <span>BLAZERS</span>
+            <span>ANTEOJOS DE SOL</span>
+            <span>NIÑOS</span>
+            <span>BIKINIS</span>
+
+        </div>
+        <div class="articulo dos">
+            <img src="Imagenes/gallery1.jpg" alt="" srcset="">
+            <h3>MUSCULOSA MUJER</h3>
+            <button>
+                <span class="material-symbols-outlined">shopping_cart</span>
+                Añadir carrito
+            </button>
             
-            <span>ADIDAS  (56)</span>
-            <span>SARKANY (32)</span>
-            <span>PUMA    (5)</span>
-            <span>DIOR    (9)</span>
-            <span>LOLA ROCA(4)</span>
-        </div>    
-            <div class="articulo">
-                <img src="Imagenes/product4.jpg" alt="" srcset="">
-                <h2>$ 720</h2>
-                <button>
-                    <span class="material-symbols-outlined">shopping_cart</span>
-                    Añadir carrito
-                </button>
-                <div class="menu4">
-                    <span class="material-symbols-outlined">add_box</span>
-                    ANADIR A FAVORITOS
-                    <span class="material-symbols-outlined">add_box</span>
-                    COMPRAR PRECIOS
-                </div>    
-            </div>
-            <div class="articulo">
-                <img src="Imagenes/product5.jpg" alt="" srcset="">
-                <h2>$ 720</h2>
-                <button>
-                    <span class="material-symbols-outlined">shopping_cart</span>
-                    Añadir carrito
-                </button>
-                <div class="menu4">
-                    <span class="material-symbols-outlined">add_box</span>
-                    ANADIR A FAVORITOS
-                    <span class="material-symbols-outlined">add_box</span>
-                    COMPRAR PRECIOS
-                </div>    
-            </div>
-            <div class="articulo">
-                <img src="Imagenes/product6.jpg" alt="" srcset="">
-                <h2>$ 720</h2>
-                <button>
-                    <span class="material-symbols-outlined">shopping_cart</span>
-                    Añadir carrito
-                </button>
-                <div class="menu4">
-                    <span class="material-symbols-outlined">add_box</span>
-                    ANADIR A FAVORITOS
-                    <span class="material-symbols-outlined">add_box</span>
-                    COMPRAR PRECIOS
-                </div>    
-            </div>
-        </Aside>
-        articulos
-    </div>    
-    <FOOter>
-        <div>
-            Servicios
-            Ayuda on line
-            contacto
-            Resumen de compras
-            personalizar cuenta
-            faqs
         </div>
-        <div>
-            Categorias
-            MODA
-            HOMBRES
-            MUJER
-            REGALOS
-            ZAPATOS
+        <div class="articulo">
+            <img src="Imagenes/gallery2.jpg" alt="" srcset="">
+            <h3>REMERA HOMBRE</h3>
+            <button>
+                <span class="material-symbols-outlined">shopping_cart</span>
+                Añadir carrito
+            </button>
+            
         </div>
-        <DIV>
-            POLITICAS
-            TERMINOS Y CONDICIONES
-            POLITICAS DE PRIVACIDAD
-            SISTEMAS DE PAGOS
-        </DIV>
-        <div>
-            nosotros
-            QUIENES SOMOS
-            CAREERS
-            SUCURSALES
-            PROVEDORES    
+        <div class="articulo">
+            <img src="Imagenes/aros.jpg" alt="" srcset="">
+            <h3>AROS</h3>
+            <button>
+                <span class="material-symbols-outlined">shopping_cart</span>
+                Añadir carrito
+            </button>
         </div>
-    </FOOter>
+        <div class="articulo">
+            <img src="Imagenes/gallery4.jpg" alt="" srcset="">
+            <h3>GAFAS MUJER</h3>
+            <button>
+                <span class="material-symbols-outlined">shopping_cart</span>
+                Añadir carrito
+            </button>
+        </div>
+    </div>
+       
+    <div class="menu5">
+        <div class="menu6">
+            <h3>SERVICIOS</h3>
+            <span>AYUDA ON LINE</span>
+            <span>CONTACTO</span>
+            <span>RESUMEN DE COMPRAS</span>
+            <span>PERSONALIZAR CUENTA</span>
+            <span>FAQS</span>
+        </div>
+        <div class="menu6">
+            <H3>CATEGORIAS</H3>
+            <span>MODA</span>
+            <span>HOMBRES</span>
+            <span>MUJER</span>
+            <span>REGALOS</span>
+            <span>ZAPATOS</span>
+        </div>
+        <div class="menu6">
+            <H3>POLITICAS</H3>
+            <span>TERMINOS Y CONDICIONES</span>
+            <span>POLITICAS DE PRIVACIDAD</span>
+            <span>SISTEMAS DE PAGOS</span>
+        </div>
+        <div class="menu6">
+            <H3>NOSOTROS</H3>
+            <span>QUIENES SOMOS</span>
+            <span>CAREERS</span>
+            <span>SUCURSALES</span>
+            <span>PROVEDORES</span>    
+        </div>
+    </div>
+<div class="modal" id="modal">
+    <form action="" class="formulario">
+    <h2>Ingrese sus credenciales</h2>
+    <div class="campo">
+        <label for="">Usuario</label>
+        <input type="text">
+    </div>
+    <div class="campo">
+        <label for="">Contraseña</label>
+        <input type="text"></div>
+    <div class="botones">
+        <button type="submit" class="bt_ok">Ingresar</button>
+        <button type="reset" class="bt_cancel" onclick=mostrar()>Cancelar</button>
+    </div>
+    </form>
+</div>    
+
 </body>
+    <script src="javascript.js"></script>
 </html>
