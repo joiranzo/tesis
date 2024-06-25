@@ -54,8 +54,8 @@ body{
 .menu2{
     display: flex;
     justify-content: right;
-    width: auto;
-    margin-left: 20%;
+    width: 100%;
+    /* margin-left: 20%; */
     padding: 10px 0 10px 0;
     border-bottom: 2px inset #cccccc;
 }
@@ -79,7 +79,7 @@ body{
 
 .cuerpo{
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: 25% 25% 25% 25%;
     grid-row-gap: 20px;
 }
 .cuerpo h3{
@@ -159,7 +159,7 @@ body{
 
 .cuerpo2{
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(5, 20%);
     grid-template-rows: repeat(2, auto);
     margin-top: 10px;
     
@@ -303,4 +303,115 @@ body{
 .visible{
     opacity: 1;
     display: block;   
+}
+
+.flecha:hover{
+    color:red;
+    
+}
+
+.bt_izq, .bt_der{
+    display: flex;
+    width: 50%;
+    justify-content: space-around;
+    
+}
+
+
+@media only screen and (max-width: 800px) {
+    
+    .menu1{
+        display: grid;
+        grid-template-columns: 40% 60%
+        
+    }
+
+    .conta{
+        grid-column-start: 1;
+        grid-column-end: 3;
+        width: 100%;
+    }
+
+    .fecha{
+        margin-left: 5px;
+        margin: 0 auto;
+    }
+
+    .redes{
+        width: fit-content;
+        margin: 0 auto;
+    }
+
+    .menu8{
+        font-size: 60%;
+        flex-wrap: wrap;
+        
+        
+        
+    }
+
+    .reloj{
+        order: 2;
+    }
+
+    .cuerpo h3{
+        font-size: 90%;
+    }
+
+    .menu3 {
+        font-size: 70%;
+        margin: 0;
+    }
+
+    .articulo img{
+        scale: 60%;
+        
+    }
+
+    .articulo h2{
+        scale: 60%;
+    }
+
+    .articulo button{ 
+        font-size: 80%;
+    }
+    
+    .menu4{
+        flex-direction: column;
+    }
+
+    .bt_izq{
+        width: 90%;
+    }
+
+    .cuerpo2 .menu1{
+        font-size: 60%;
+        display: flex;
+    }
+
+    .cuerpo2 .articulo h3{
+        font-size: 60%;
+    }
+
+    .menu5{
+        font-size: 60%;
+    }
+
+    .menu7{
+        font-size: 70%;
+        width: 100%;
+        margin-left: 10px;
+    }
+
+    .menu7 h3{
+        font-size: 100%;
+    }
+
+    form {
+        font-size: 60%;
+    }
+
+    form button{
+        font-size: 90%;
+    }
 }

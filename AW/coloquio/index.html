@@ -20,7 +20,7 @@
                 info@compras.com.ar
             </div> 
         </div>
-        <div id="fecha">Fecha</div>
+        <div class="fecha" id="fecha">Fecha</div>
         <div class="redes"> 
   
             
@@ -33,7 +33,7 @@
     </div>    
     <div class="menu8">
         <div class="reloj" id="reloj">
-        Reloj    
+            Reloj    
         </div>
         <nav class="menu2">
             <div class="vertical-center menu_item">
@@ -144,13 +144,16 @@
             <span>DIOR</span><span>(9)</span>
             <span>LOLA ROCA</span><span>(4)</span>
         </div>    
-        <div class="articulo">
+        <div class="articulo movible" id="prueba">
             <img src="Imagenes/product4.jpg" alt="" srcset="">
             <h2>$ 1050</h2>
-            <button>
-                <span class="material-symbols-outlined">shopping_cart</span>
-                Añadir carrito
-            </button>
+            <div class="bt_izq">
+                <span class="flecha" onclick=izquierda()>&#9665</span>
+                <button>
+                    <span class="material-symbols-outlined">shopping_cart</span>
+                    Añadir carrito
+                </button>
+            </div>
             <div class="menu4">
                 <div class="menu_item">
                     <span>+</span>
@@ -162,7 +165,7 @@
                 </div>
             </div>    
         </div>
-        <div class="articulo">
+        <div class="articulo movible">
             <img src="Imagenes/product5.jpg" alt="" srcset="">
             <h2>$ 580</h2>
             <button>
@@ -180,13 +183,16 @@
                 </div>
             </div>
         </div>
-        <div class="articulo">
+        <div class="articulo movible">
             <img src="Imagenes/product6.jpg" alt="" srcset="">
             <h2>$ 350</h2>
-            <button>
-                <span class="material-symbols-outlined">shopping_cart</span>
-                Añadir carrito
-            </button>
+            <div class="bt_izq">
+                <button>
+                    <span class="material-symbols-outlined">shopping_cart</span>
+                    Añadir carrito
+                </button>
+                <span class="flecha" onclick=derecha()>&#9655</span>
+            </div>
             <div class="menu4">
                 <div class="menu_item">
                     <span>+</span>
