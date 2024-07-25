@@ -1,0 +1,45 @@
+body{
+    display: flex;
+    justify-content: space-around;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    padding: 1em;
+    border: 1px solid black;
+    border-radius: 8px;
+}
+
+table{
+    padding: 1em;
+    width: 70%;
+    border: 1px solid black;
+    border-radius: 8px;
+}
+
+thead{
+    
+    background-color: blue;
+}
+
+th{
+    padding: 0.5em;
+    color:white;
+}
+
+.center{
+    display: flex;
+    justify-content: center;
+}
+
+.btn_edit{
+    background-color: green;
+    color: white;
+    border: none;
+}
+
+.btn_clear{
+    background-color: red;
+    color: white;
+}
