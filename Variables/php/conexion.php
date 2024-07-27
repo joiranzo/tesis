@@ -1,4 +1,5 @@
 <?php
+
 function conectar(){
     $host="localhost:3306";
     $user= "root";  
@@ -13,5 +14,5 @@ function conectar(){
     if (mysqli_connect_errno()) {echo "Error".mysqli_connect_error();}
       
     return $con;
-}   
+}
 
