@@ -1,0 +1,134 @@
+:root{
+    /*colores*/
+    --col_borde:rgba(75,75,255,1);
+    --col_fondo:rgba(230,230,230,1);
+    --col_icon_edt:rgba(75,75,255,0.7);
+    --col_icon_edt_sel:rgba(0,0,255,1);
+    --col_icon_del:rgba(255,0,0,0.7);
+    --col_icon_del_sel:rgba(255,0,0,1);
+    
+    /*radio*/
+    --rad_borde:8px;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body{
+    background-color: var(--col_fondo);
+}
+
+.conte_gral{
+    display: flex;
+    flex-direction: column;
+    max-width: 90%;
+    max-height: 90%;
+    margin: 0rem auto;
+}
+
+.barra_menu{
+    display: flex;
+    justify-content: space-between;
+    border:2px solid var(--col_borde);
+    border-radius: var(--rad_borde);
+    padding: 0.5rem;
+    margin: 0.5rem 0 0.5rem 0;
+    color: var(--col_borde);
+    align-items: center;
+    
+    .titulo{
+        font-size: x-large;
+        font-weight: bolder;
+    }
+    
+    a{
+        text-decoration: none;
+        color: var(--col_icon_edt);
+    }
+
+    a:hover{
+        color: var(--col_icon_edt_sel);
+       
+    }
+}
+
+.table{
+    display: flex;
+    flex-direction: column;
+    border: 2px solid var(--col_borde);
+    border-radius: var(--rad_borde);
+    min-width: 95%;
+    padding: 0.5rem;
+    overflow-y:auto;    
+
+    .titulos{
+        display: flex;
+        background-color: var(--col_borde);
+        padding: 0.6rem 0 0.6rem 0;
+        columns: var(--col_fondo);
+        border-radius: var(--rad_borde);
+        font-weight: bolder;
+        font-size: large;
+        color: var(--col_fondo);
+    }
+}
+
+.fila{
+    display: flex;
+    padding:  0.2rem 0 0.2rem 0 ;
+    width: 100%;
+    display: none;
+
+    a{
+        text-decoration: none;
+    }
+}
+
+.invisible{
+    display: none;
+}
+
+.editar{
+    color:var(--col_icon_edt);
+}
+
+.editar:hover{
+    color:var(--col_icon_edt_sel);
+}
+
+.borrar{
+    color: var(--col_icon_del);
+}
+
+.borrar:hover{
+    color: var(--col_icon_del_sel);
+}
+.cancelar{
+    color:red;
+    display: none;
+    border: none;
+    background: transparent;
+}
+
+.grabar{
+    color:green;
+    display: none;
+    border: none;
+    background: transparent;
+}
+
+.visible_flex{
+    display:flex;
+}
+
+.visible_inline{
+    display:inline ;
+}
+
+.borde_visible{
+    color: var(--col_borde);
+    border: 1px solid var(--col_borde);
+}
