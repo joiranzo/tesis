@@ -4,13 +4,15 @@
     justify-content: space-between;
     width: 100%;
     margin-bottom: 0.5rem;
+   
 }
 
 .cont_vert{
     display: flex;
-    width: auto;
+    width: max-content;
     flex-direction: column;
     padding: 0.5rem;
+    
 }
 
 label{
@@ -34,4 +36,14 @@ input:focus-visible, select:focus-visible{
 
 select{
     background-color: white;
+}
+
+.w100{
+    width: 100%;
+}
+
+textarea{
+    border-radius: var(--rad_borde_inp);
+    padding: 0.2rem;
+    border-color: var(--col_borde);
 }
