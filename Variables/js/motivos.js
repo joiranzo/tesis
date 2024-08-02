@@ -1,7 +1,8 @@
 let icon1=document.getElementById("icon1");
 let icon3=document.getElementById("icon_cerrar");
-let form1=document.getElementById("nuevo");
 let icon2=document.getElementById("cancelar");
+let form1=document.getElementById("nuevo");
+let form2=document.getElementById("seleccion");
 
 let inputs=document.getElementsByClassName("campo");
 let bts_editar=document.getElementsByClassName("editar");
@@ -11,26 +12,27 @@ let bts_borrar=document.getElementsByClassName("borrar");
 let filas=document.getElementsByClassName("fila")
 
 icon1.addEventListener("click",(e)=>{
-    for (const key in filas) {
+    /*for (const key in filas) {
         if (Object.hasOwnProperty.call(filas, key)) {
             const element = filas[key];
             element.classList.remove("visible_flex")
-    }
+    }*/
     form1.classList.add("visible_flex")
-    bts_cancelar[0].classList.add("visible_inline")
-    bts_aceptar[0].classList.add("visible_inline")    
-}})
+    form2.classList.add("invisible")
+    //bts_cancelar[0].classList.add("visible_inline")
+    //bts_aceptar[0].classList.add("visible_inline")    
+})
 
 icon2.addEventListener("click",(e)=>{
       
-    for (const key in filas) {
+    /*for (const key in filas) {
         if (Object.hasOwnProperty.call(filas, key)) {
             const element = filas[key];
             element.classList.add("visible_flex")
-    }
+    }*/
     form1.classList.remove("visible_flex")  
-    
-}})
+    form2.classList.remove("invisible")
+})
 
 for (const key in bts_editar) {
     if (Object.hasOwnProperty.call(bts_editar, key)) {

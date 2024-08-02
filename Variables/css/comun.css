@@ -2,13 +2,16 @@
     /*colores*/
     --col_borde:rgba(75,75,255,1);
     --col_fondo:rgba(230,230,230,1);
-    --col_icon_edt:rgba(75,75,255,0.7);
-    --col_icon_edt_sel:rgba(0,0,255,1);
-    --col_icon_del:rgba(255,0,0,0.7);
-    --col_icon_del_sel:rgba(255,0,0,1);
+    --col_icon_blu:rgba(75,75,255,0.7);
+    --col_icon_blu_sel:rgba(0,0,255,1);
+    --col_icon_red:rgba(255,0,0,0.5);
+    --col_icon_red_sel:rgba(255,0,0,1);
+    --col_icon_grd:rgba(0,180,0,0.5);
+    --col_icon_grd_sel:rgba(0,255,0,1);
     
     /*radio*/
     --rad_borde:8px;
+    --rad_borde_inp:5px
 }
 
 *{
@@ -43,16 +46,11 @@ body{
         font-size: x-large;
         font-weight: bolder;
     }
-    
+
     a{
         text-decoration: none;
-        color: var(--col_icon_edt);
     }
-
-    a:hover{
-        color: var(--col_icon_edt_sel);
-       
-    }
+  
 }
 
 .table{
@@ -62,7 +60,7 @@ body{
     border-radius: var(--rad_borde);
     min-width: 95%;
     padding: 0.5rem;
-    overflow-y:auto;    
+  
 
     .titulos{
         display: flex;
@@ -91,33 +89,28 @@ body{
     display: none;
 }
 
-.editar{
-    color:var(--col_icon_edt);
+.bt_azul{
+    color:var(--col_icon_blu);
 }
 
-.editar:hover{
-    color:var(--col_icon_edt_sel);
+.bt_azul:hover{
+    color:var(--col_icon_blu_sel);
 }
 
-.borrar{
-    color: var(--col_icon_del);
+.bt_rojo{
+    color: var(--col_icon_red);
 }
 
-.borrar:hover{
-    color: var(--col_icon_del_sel);
-}
-.cancelar{
-    color:red;
-    display: none;
-    border: none;
-    background: transparent;
+.bt_rojo:hover{
+    color: var(--col_icon_red_sel);
 }
 
-.grabar{
-    color:green;
-    display: none;
-    border: none;
-    background: transparent;
+.bt_verde{
+    color: var(--col_icon_grd);
+}
+
+.bt_verde:hover{
+    color: var(--col_icon_grd_sel);
 }
 
 .visible_flex{
@@ -131,4 +124,10 @@ body{
 .borde_visible{
     color: var(--col_borde);
     border: 1px solid var(--col_borde);
+}
+
+#seleccion{
+    max-height: 80vh; 
+    overflow-y:auto;   
+    
 }

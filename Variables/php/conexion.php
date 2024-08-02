@@ -16,3 +16,21 @@ function conectar(){
     return $con;
 }
 
+function consulta($tabla,$filtro){
+
+    $con=conectar();
+    
+    
+    if (is_null($filtro))
+        $sql = "SELECT * FROM $tabla";
+    else
+        $sql = "SELECT * FROM $tabla WHERE $filtro";
+            
+
+
+    $query = mysqli_query($con, $sql);
+       
+    return mysqli_fetch_all($query);
+    
+}
+

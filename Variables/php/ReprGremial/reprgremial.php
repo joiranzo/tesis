@@ -8,7 +8,7 @@
         exit();
     } 
     
-    $sql = "SELECT * FROM Motivos";
+    $sql = "SELECT * FROM ReprGremial";
     
     $query = mysqli_query($con, $sql);
     
@@ -25,13 +25,13 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20,400,0,0" />
     <link rel="stylesheet" href="../../css/motivos.css">
     <link rel="stylesheet" href="../../css/comun.css">
-    <title>Motivos</title>
+    <title>Gremios</title>
 </head>
 
 <body>
     <div class="conte_gral">
         <div class="barra_menu">
-            <div class="titulo">Motivos</div>
+            <div class="titulo">Representaciones Gremiales</div>
             <div class="menu">
                 <a class="material-symbols-outlined icon bt_azul" href="#" id="icon1">note_add</a>
                 <a class="material-symbols-outlined icon bt_azul" href="">home</a>
@@ -41,15 +41,13 @@
         <div class="table">
             
             <div class="titulos">
-                <div class="c1">Código</div>
-                <div class="c2">Descripción</div>
+                <div class="c2">Nombre del Gremio</div>
                 <div class="c3"></div>
             </div>
             
             <div class="cuerpo">
                 <form class="fila" action="nuevo.php" method="post" id="nuevo">
-                    <input class="c1 borde_visible" type="text" name="inCodMotivo" size="6" >
-                    <input class="c2 borde_visible" type="text" name="inNomMotivo"> 
+                    <input class="c2 borde_visible" type="text" name="inNomSupervision"> 
                     <div class="c3">
                         <button type="submit" class="material-symbols-outlined bt_verde" >check_circle</button>    
                         <button type="reset"  class="material-symbols-outlined bt_rojo" id="cancelar">cancel</button>
@@ -61,8 +59,7 @@
                     $query = mysqli_query($con, $sql);
                     while ($row = mysqli_fetch_array($query)) {?>
                     <form class="fila visible_flex" action="actualizar.php" method="post">
-                        <input class="c1"  size="4" disabled name="CodMotivo" value="<?php echo $row['CodMotivo'] ?>">
-                        <input class="c2 campo" disabled name="NomMotivo" value ="<?php echo $row['NomMotivo'] ?>"></input>
+                        <input class="c2 campo" disabled name="NomSupervision" value ="<?php echo $row['NomReprGremial'] ?>"></input>
                         <div class="c3 ">
                             
                             <button type="submit" class="material-symbols-outlined bt_verde invisible grabar">check_circle</button>    

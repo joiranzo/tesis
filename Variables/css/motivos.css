@@ -24,22 +24,11 @@
     justify-content: space-around;
 }
 
-/*.i1{
-    overflow-x: hidden;
-    background-color: red;
-}*/
-
-/*.borde_visible{
-    color: rgb(75 ,75,255);
-    border: 1px solid rgb(75 ,75,255);;
-}*/
-        
-/*.c3>.borrar,.c3>.cancelar,.c3>.nuevo_cancelar{
-    color: red;
-    display: none;
+button{
     border: none;
     background: transparent;
-}*/
+}
+
         
 
 
