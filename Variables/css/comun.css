@@ -74,10 +74,17 @@ body{
     }
 }
 
+
+
+form:hover{
+    border: 1px solid var(--col_borde);
+    border-radius: var(--rad_borde);
+}
+
 .fila{
     display: flex;
     padding:  0.2rem 0 0.2rem 0 ;
-    width: 100%;
+    width: 99%;
     display: none;
 
     a{
@@ -134,4 +141,21 @@ body{
 
 textarea{
     width: 100%;
+}
+
+.cont_horiz{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 0.5rem;
+   
+}
+
+.cont_vert{
+    display: flex;
+    width: max-content;
+    flex-direction: column;
+    padding: 0.5rem;
+    
 }

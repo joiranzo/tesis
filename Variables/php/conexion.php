@@ -30,7 +30,7 @@ function consulta($tabla,$filtro){
 
     $query = mysqli_query($con, $sql);
        
-    return mysqli_fetch_array($query);
+    return mysqli_fetch_all($query);
     
 }
 
