@@ -1,0 +1,132 @@
+const express=require("express")
+const mysql=require("mysql")
+
+const conexion=mysql.createConnection({
+    host:'localhost',
+    database:'NuevaVariables',
+    user:'root',
+    password:''
+})
+
+conexion.connect((error)=>{
+    if (error) {throw error}
+        else {console.log('Conectado a la base de datos')}
+})
+const app=express()
+
+app.set("view engine","ejs")
+
+app.use(express.static("public"))
+
+    app.get("/reprgremiales",(req,res)=>{
+     conexion.query('select * from ReprGremial',(error,resultados)=>{
+         if (error) {
+             throw error
+         } else {
+             res.render("reprgremiales",{resultado:resultados}) 
+         }
+         })
+    }) 
+
+    app.get("/supervisiones",(req,res)=>{
+        conexion.query('select * from Supervisiones',(error,resultados)=>{
+            if (error) {
+                throw error
+            } else {
+                res.render("supervisiones",{resultado:resultados}) 
+            }
+            })
+       }) 
+    
+    app.get("/coordinadores",(req,res)=>{
+        conexion.query('select * from Coordinadores',(error,resultados)=>{
+            if (error) {
+                throw error
+            } else {
+                res.render("coordinadores",{resultado:resultados}) 
+            }
+            })
+       })
+       
+    app.get("/especialidades",(req,res)=>{
+        conexion.query('select * from Puestos',(error,resultados)=>{
+            if (error) {
+                throw error
+            } else {
+                res.render("especialidades",{resultado:resultados}) 
+            }
+            })
+       })
+    
+    app.get("/coordinaciones",(req,res)=>{
+        conexion.query('select * from Coordinaciones',(error,resultados)=>{
+            if (error) {
+                throw error
+            } else {
+                res.render("coordinaciones",{resultado:resultados}) 
+            }
+            })
+       })
+    
+    app.get("/encargados",(req,res)=>{
+        conexion.query('select * from Encargados',(error,resultados)=>{
+            if (error) {
+                throw error
+            } else {
+                res.render("encargados",{resultado:resultados}) 
+            }
+            })
+       })      
+   
+       app.get("/superior",(req,res)=>{
+        conexion.query('select * from SupInmeds',(error,resultados)=>{
+            if (error) {
+                throw error
+            } else {
+                res.render("supinmeds",{resultado:resultados}) 
+            }
+            })
+       })  
+
+       app.get("/subregion",(req,res)=>{
+        conexion.query('select * from Subregiones',(error,resultados)=>{
+            if (error) {
+                throw error
+            } else {
+                res.render("subregiones",{resultado:resultados}) 
+            }
+            })
+       }) 
+
+       app.get("/tiponovedad",(req,res)=>{
+        conexion.query('select * from TiposNovedades',(error,resultados)=>{
+            if (error) {
+                throw error
+            } else {
+                res.render("tiposnovedades",{resultado:resultados}) 
+            }
+            })
+       }) 
+
+       app.get("/empleado",(req,res)=>{
+        conexion.query('select * from Dotacion',(error,resultados)=>{
+            if (error) {
+                throw error
+            } else {
+                res.render("empleados",{resultado:resultados}) 
+            }
+            })
+       }) 
+
+       app.get("/motivo",(req,res)=>{
+        conexion.query('select * from Motivos',(error,resultados)=>{
+            if (error) {
+                throw error
+            } else {
+                res.render("motivos",{resultado:resultados}) 
+            }
+            })
+       }) 
+app.listen(3000, (req,res)=>{
+    console.log("Corriendo en el puerto 3000")
+})
