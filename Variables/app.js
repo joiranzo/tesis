@@ -1,12 +1,19 @@
 const express=require("express")
 const mysql=require("mysql")
 
+// const conexion=mysql.createConnection({
+//     host:'localhost',
+//     database:'NuevaVariables',
+//     user:'root',
+//     password:''
+// })
+
 const conexion=mysql.createConnection({
-    host:'localhost',
-    database:'NuevaVariables',
-    user:'root',
-    password:''
-})
+         host:'bvu4zofwdepeltug1eav-mysql.services.clever-cloud.com',
+         database:'bvu4zofwdepeltug1eav',
+         user:'um79iibw1rdmkdoc',
+         password:'crQgdcAwWLRk4fH1hmPA'
+     })
 
 conexion.connect((error)=>{
     if (error) {throw error}
@@ -108,6 +115,16 @@ app.use(express.static("public"))
             })
        }) 
 
+       app.get("/tiponovedadedit",(req,res)=>{
+        conexion.query("select * from TiposNovedades where IdTipoNovedad='"+req.query.id+"'",(error,resultados)=>{
+            if (error) {
+                throw error
+            } else {
+                res.render("tiposnovedades_edit",{resultado:resultados}) 
+            }
+            })
+       }) 
+
        app.get("/empleado",(req,res)=>{
         conexion.query('select * from Dotacion',(error,resultados)=>{
             if (error) {
@@ -117,6 +134,22 @@ app.use(express.static("public"))
             }
             })
        }) 
+
+       app.get("/empleadoedit",(req,res)=>{
+            conexion.query("select * from Dotacion where Legajo="+req.query.id,(error,empleados)=>{
+            if (error) { throw error} else {conexion.query("select * from Puestos",(error,puestos)=>{
+             if (error) { throw error} else {conexion.query("select * from SupInmeds",(error,supinmeds)=>{
+              if (error) { throw error} else {conexion.query("select * from Coordinaciones",(error,coordinaciones)=>{
+               if (error) { throw error} else {conexion.query("select * from Coordinadores",(error,coordinadores)=>{
+                if (error) { throw error} else {conexion.query("select * from Encargados",(error,encargados)=>{
+                 if (error) { throw error} else {conexion.query("select * from ReprGremial",(error,gremios)=>{
+                  if (error) { throw error} else {conexion.query("select * from Subregiones",(error,subregiones)=>{
+                    if (error) { throw error} else {conexion.query("select * from Supervisiones",(error,supervisiones)=>{
+                        if (error) { throw error} else     
+             {res.render("empleados_edit",{empleados,puestos,supinmeds,coordinaciones,coordinadores,encargados,
+                gremios,subregiones,supervisiones})}
+            
+       })}})}})}})}})}})}})}})}})})
 
        app.get("/motivo",(req,res)=>{
         conexion.query('select * from Motivos',(error,resultados)=>{

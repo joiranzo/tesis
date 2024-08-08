@@ -14,9 +14,9 @@
         <div class="fila_principal">
             <div class="titulo">Motivos</div>
             <div class="menu_fila col3">
-                <a class="material-symbols-outlined bt_azul" href="#" 
-                    title="Nuevo">note_add</a>
-                <a class="material-symbols-outlined icon bt_azul" href="#"
+                <a class="material-symbols-outlined bt_nuevo" href="#" 
+                    id="bt_nuevo">note_add</a>
+                <a class="material-symbols-outlined icon bt_nuevo" href="#"
                     title="Inicio">home</a>
             </div>
         </div>
@@ -26,27 +26,29 @@
             <div class="cabecera">
                 <span class="col1">Código</span>
                 <span class="col2">Descripción</span>
-                
+                <span class="col3"></span>
             </div>
             
             <div class="cuerpo">
+               
+                    <div class="fila" style="display: none;" id="fila_nueva">
+                        <input type="text" class="col1" placeholder="Ingrese código" id="cod_nuevo">
+                        <input type="text" class="col2" placeholder="Ingrese descripción" id="des_nuevo">
+                        <div class="col3 menu_fila" >
+                            <button class="material-symbols-outlined bt_verde_nuevo" type="button" id="ok_new">check_circle</button>
+                            <button class="material-symbols-outlined bt_rojo_nuevo" type="button" id="cancel_new">cancel</button>
+                        </div>
+                    </div> 
+                    
                 <% resultado.forEach((cliente)=>{ %>
-                    <div class="fila">
-                        <label class="col1">
-                            <%= cliente.CodMotivo %>
-                        </label>
-                        <label class="col2">
-                            <%= cliente.NomMotivo %>
-                        </label> 
-                        <div class="menu_fila col3">
-                            <a class="material-symbols-outlined bt_verde" href="#"
-                                style="display: none;">check_circle </a>    
-                            <a class="material-symbols-outlined bt_rojo"  href="#"
-                                style="display: none;">cancel<a>
-                            <a class="material-symbols-outlined bt_azul"  href="#"
-                                title="Editar">Edit</a>    
-                            <a class="material-symbols-outlined bt_rojo"  href="#"
-                                title="Eliminar">Delete</a>        
+                    <div class="fila_hover">
+                        <input type="text" class="col1" disabled value="<%= cliente.CodMotivo %> ">
+                        <input class="editable col2" type="text" disabled value="<%= cliente.NomMotivo %> ">
+                        <div class="col3 menu_fila" >
+                            <button class="material-symbols-outlined bt_verde" style="display:none"type="button">check_circle</button>
+                            <button class="material-symbols-outlined bt_rojo" style="display:none"type="button">cancel</button>
+                            <button class="material-symbols-outlined bt_azul" type="button">edit</button>
+                            <button class="material-symbols-outlined bt_delete" type="button">delete</button>
                         </div>
                     </div>    
                 <% }); %> 
@@ -55,5 +57,5 @@
 
     </div>
 </body>
-<script src="../../js/motivos.js"></script>
+<script src="/js/comun.js"></script>
 </html>
