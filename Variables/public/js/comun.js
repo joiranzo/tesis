@@ -12,11 +12,23 @@ addEventListener("DOMContentLoaded",(e)=>{
     const inp_nuevo=document.getElementById("cod_nuevo")
     let tabla
 
+    const update = {
+        title: 'A blog post by Kingsley',
+        body: 'Brilliant post on fetch API',
+        userId: 1,
+        };
+        
+        const options = {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json',},
+        body: JSON.stringify(update),
+    };
+
     const nuevo_dato = async () =>{
         let dato= {id:'ok'}
         try {
-            const response= await fetch ('/nuevodato',{method:'POST',body:JSON.stringify(dato),headers:new Headers()})
-            return response.json
+            const response= await fetch ('/nuevodato',options)
+            return response.json()
 
             }
              catch (error) {
@@ -40,7 +52,7 @@ addEventListener("DOMContentLoaded",(e)=>{
 
     inp_nuevo.addEventListener("change",(e)=>{
         nuevo_dato()
-        alert("Cambio")
+        
     })
 
     for (const key in btns_edit) {

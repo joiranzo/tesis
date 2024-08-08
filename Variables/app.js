@@ -1,5 +1,6 @@
 const express=require("express")
 const mysql=require("mysql")
+const bodyParser = require('body-parser');
 
 // const conexion=mysql.createConnection({
 //     host:'localhost',
@@ -24,9 +25,13 @@ const app=express()
 app.set("view engine","ejs")
 
 app.use(express.static("public"))
+app.use(bodyParser.urlencoded({ extended:true}));
+app.use(bodyParser.json())
 
-app.post("/nuevodato",(req,res)=>{
-    console.log(req.body)
+app.post("/nuevodato",function(req,res){
+    
+    console.dir(req.body);
+    res.send(req.body.id)
 })
 
 app.get("/reprgremiales",(req,res)=>{
