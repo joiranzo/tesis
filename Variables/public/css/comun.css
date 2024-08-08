@@ -44,7 +44,7 @@ body{
     margin-top: 0.5rem;
     border: 2px solid var(--color_borde);
     border-radius: var(--radio_borde);
-    padding: 0.5rem;
+    padding: 0.5rem 0.5rem 1rem 0.5rem;
     max-height: 87vh;
 }
 
@@ -68,7 +68,7 @@ span{
     flex-direction: column;
     max-height: 80vh;
     overflow-y: auto;
-   
+    padding-bottom:0.5rem ;
 }
 
 .fila_hover,.fila{

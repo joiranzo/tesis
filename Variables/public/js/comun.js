@@ -7,13 +7,27 @@ addEventListener("DOMContentLoaded",(e)=>{
     const btn_nuevo=document.getElementById("bt_nuevo")
     const inps=document.getElementsByClassName("editable")
     const nuevo=document.getElementById("fila_nueva")
-    const bt_ok_nuevo=document.getElementById("ok_new")
-    const bt_cancel_nuevo=document.getElementById("cancel_new")
+    const btn_ok_nuevo=document.getElementById("ok_new")
+    const btn_cancel_nuevo=document.getElementById("cancel_new")
+    const inp_nuevo=document.getElementById("cod_nuevo")
+    let tabla
 
     btn_nuevo.addEventListener("click",(e)=>{
         e.preventDefault
+        tabla=e.target.getAttribute("tabla")
+
+        console.log(tabla)
         nuevo.style.display="flex"
-        
+        inp_nuevo.focus()
+    })
+
+    btn_cancel_nuevo.addEventListener("click",(e)=>{
+        e.preventDefault
+        nuevo.style.display="none"
+    })
+
+    inp_nuevo.addEventListener("change",(e)=>{
+        alert("Cambio")
     })
 
     for (const key in btns_edit) {
