@@ -25,15 +25,19 @@ app.set("view engine","ejs")
 
 app.use(express.static("public"))
 
-    app.get("/reprgremiales",(req,res)=>{
-     conexion.query('select * from ReprGremial',(error,resultados)=>{
-         if (error) {
-             throw error
-         } else {
-             res.render("reprgremiales",{resultado:resultados}) 
-         }
-         })
-    }) 
+app.post("/nuevodato",(req,res)=>{
+    console.log(req.body)
+})
+
+app.get("/reprgremiales",(req,res)=>{
+    conexion.query('select * from ReprGremial',(error,resultados)=>{
+        if (error) {
+            throw error
+        } else {
+            res.render("reprgremiales",{resultado:resultados}) 
+        }
+        })
+}) 
 
     app.get("/supervisiones",(req,res)=>{
         conexion.query('select * from Supervisiones',(error,resultados)=>{

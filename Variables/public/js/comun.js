@@ -12,6 +12,18 @@ addEventListener("DOMContentLoaded",(e)=>{
     const inp_nuevo=document.getElementById("cod_nuevo")
     let tabla
 
+    const nuevo_dato = async () =>{
+        let dato= {id:'ok'}
+        try {
+            const response= await fetch ('/nuevodato',{method:'POST',body:JSON.stringify(dato),headers:new Headers()})
+            return response.json
+
+            }
+             catch (error) {
+            alert(error.message)
+        }
+
+    }
     btn_nuevo.addEventListener("click",(e)=>{
         e.preventDefault
         tabla=e.target.getAttribute("tabla")
@@ -27,6 +39,7 @@ addEventListener("DOMContentLoaded",(e)=>{
     })
 
     inp_nuevo.addEventListener("change",(e)=>{
+        nuevo_dato()
         alert("Cambio")
     })
 
