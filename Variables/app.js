@@ -1,6 +1,8 @@
 const express=require("express")
 const mysql=require("mysql")
 const bodyParser = require('body-parser');
+const funciones=require("./js/funciones")
+const paginas=require("./js/paginas")
 
 // const conexion=mysql.createConnection({
 //     host:'localhost',
@@ -29,10 +31,34 @@ app.use(bodyParser.urlencoded({ extended:true}));
 app.use(bodyParser.json())
 
 app.post("/nuevodato",function(req,res){
-    
-    console.dir(req.body);
-    res.send(req.body.id)
+  conexion.query(funciones.Insert(req.body),(error,resultados)=>{
+    if (error) {
+        res.send(error)
+    } else {
+        res.redirect("/"+req.body.fuente)        
+    }
+    })
 })
+
+app.post("/borrardato",function(req,res){
+    conexion.query(funciones.Delete(req.body),(error,resultados)=>{
+      if (error) {
+          res.send(error)
+      } else {
+          res.redirect("/"+req.body.fuente)        
+      }
+      })
+  })
+
+  app.post("/editardato",function(req,res){
+    conexion.query(funciones.Edit(req.body),(error,resultados)=>{
+      if (error) {
+          res.send(error)
+      } else {
+          res.redirect("/"+req.body.fuente)        
+      }
+      })
+  })  
 
 app.get("/reprgremiales",(req,res)=>{
     conexion.query('select * from ReprGremial',(error,resultados)=>{
@@ -44,12 +70,12 @@ app.get("/reprgremiales",(req,res)=>{
         })
 }) 
 
-    app.get("/supervisiones",(req,res)=>{
-        conexion.query('select * from Supervisiones',(error,resultados)=>{
+    app.get("/supervision",(req,res)=>{
+        conexion.query('select * from Supervisiones',(error,datosquery)=>{
             if (error) {
                 throw error
             } else {
-                res.render("supervisiones",{resultado:resultados}) 
+                res.render("comun",{param:paginas.supervision(datosquery)}) 
             }
             })
        }) 
@@ -160,15 +186,16 @@ app.get("/reprgremiales",(req,res)=>{
             
        })}})}})}})}})}})}})}})}})})
 
-       app.get("/motivo",(req,res)=>{
-        conexion.query('select * from Motivos',(error,resultados)=>{
-            if (error) {
-                throw error
-            } else {
-                res.render("motivos",{resultado:resultados}) 
-            }
-            })
-       }) 
+    //Pagina motivos
+       app.get("/motivos",(req,res)=>{
+            let query='select * from Motivos'    
+            conexion.query(query,(error,datosquery)=>{
+                if (error) {res.send(error)}
+                    else{res.render("comun",{param:paginas.motivo(datosquery)} )
+                }
+           })            
+    }) 
+
 app.listen(3000, (req,res)=>{
     console.log("Corriendo en el puerto 3000")
 })
