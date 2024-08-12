@@ -30,7 +30,7 @@ addEventListener("DOMContentLoaded",(e)=>{
     const getPuestos= ()=>{
         buscarDato({tabla:"Puestos",Key:null})
         .then (data=>{
-            console.log(data)
+            
         })
     }
     

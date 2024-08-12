@@ -201,6 +201,44 @@ function getCoordinaciones(datosquery){
     return pag
 }
 
+function getPuestos(datosquery){
+   
+    let pag={
+        titulo:"Especialidades", //Titulo de la pagina
+        tabla:"Puestos",  //Nombre de la tabla 
+        barra:"Especialidades de los Técnicos", //Texto en la cabecera de la página
+        datos:datosquery, //Datos de la consulta
+        campos:{
+            campo1:{//Siempre es clave primaria de la tabla
+                visible:false,
+                nombre:"IdPuesto",
+                etiqueta:"Código",
+            },
+            campo2:{
+                nombre:"NomPuesto",
+                etiqueta:"Nombre de la Especialidad",
+            }
+        }
+    }
+   
+    return pag
+}
+function getEmpleados(conexion,datosquery){
+    conexion.query("Select * from `Puestos`",(error,puestos)=>{
+        if (error) {
+            throw console.log(error)
+        } else {    
+            let pagina={
+                puestos:puestos
+        // empleados:datosquery,
+        // puestos:conexion.query("Select * from "+getPuestos(null).tabla)
+        // // empleados:Object.values(JSON.parse(JSON.stringify(datosquery)))
+    }}
+    console.log(pagina)
+    return pagina
+    
+})}
+
 module.exports={
     "motivo":getMotivos,
     "supervision":getSupervisiones,
@@ -210,5 +248,7 @@ module.exports={
     "superior":getSuperiores,
     "gremio":getGremios,
     "subregion":getSubregiones,
-    "coordinacion":getCoordinaciones
+    "coordinacion":getCoordinaciones,
+    "puesto":getPuestos,
+    "empleado":getEmpleados
 }
