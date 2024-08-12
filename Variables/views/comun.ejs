@@ -36,7 +36,7 @@
                         <!-- pagina para el redireccionamiento luego de agregar dato-->
                         <input type="text" readonly name="fuente" style="display: none;" value="<%= param.titulo%>">
                         <!-- Nombre de la tabla a donde se agrega el dato -->
-                        <input type="text" readonly name="tabla"  style="display: none;" value="<%= param.titulo%>">
+                        <input type="text" readonly name="tabla"  style="display: none;" value="<%= param.tabla%>">
                         <!--  -->
                         <input type="text" class="col1" placeholder="Ingrese código" id="cod_nuevo" name="<%= param.campos.campo1.nombre %>">    
               
@@ -55,7 +55,7 @@
                         <!-- Nombre de la tabla a donde se agrega el dato -->
                         <input type="text" name="tabla"  style="display: none;" value="<%= param.titulo%>">
                         <!-- Nombre de clave primaria de la tabla -->
-                        <input type="text" name="prikey" style="display: none;" value="<%= param.campos.campo1.nombre %>">
+                        <input type="text" name="prikey" style="display: none;" value="<%= param.tabla %>">
                         <!-- Primera columna -->
                         <input type="text" class="col1" readonly name="<%= param.campos.campo1.nombre %>" value="<%= dato[param.campos.campo1.nombre] %> "
                         <% if (!param.campos.campo1.visible) { %> style="display:none;"  <% } %>>   

@@ -45,8 +45,22 @@ function generarEdit(body){
     
     return consulta
 }
+
+function generarGet(body){
+    
+    let consulta=""
+
+    if (body.key==null)
+    {consulta="SELECT * from "+body.tabla}
+        else {consulta="SELECT * from "+body.tabla+" WHERE `"+body.key+"`='"+body.filtro+"'" }
+   
+    return consulta
+}
+
 module.exports={
     "Insert":generarInsert,
     "Delete":generarDelete,
-    "Edit":generarEdit
+    "Edit":generarEdit,
+    "Get": generarGet
+
 }

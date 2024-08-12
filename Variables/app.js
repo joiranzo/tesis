@@ -4,31 +4,40 @@ const bodyParser = require('body-parser');
 const funciones=require("./js/funciones")
 const paginas=require("./js/paginas")
 
-// const conexion=mysql.createConnection({
-//     host:'localhost',
-//     database:'NuevaVariables',
-//     user:'root',
-//     password:''
-// })
-
 const conexion=mysql.createConnection({
-         host:'bvu4zofwdepeltug1eav-mysql.services.clever-cloud.com',
-         database:'bvu4zofwdepeltug1eav',
-         user:'um79iibw1rdmkdoc',
-         password:'crQgdcAwWLRk4fH1hmPA'
-     })
+    host:'localhost',
+    database:'NuevaVariables',
+    user:'root',
+    password:''
+})
+
+// const conexion=mysql.createConnection({
+//          host:'bvu4zofwdepeltug1eav-mysql.services.clever-cloud.com',
+//          database:'bvu4zofwdepeltug1eav',
+//          user:'um79iibw1rdmkdoc',
+//          password:'crQgdcAwWLRk4fH1hmPA'
+//      })
+
+
 
 conexion.connect((error)=>{
     if (error) {throw error}
-        else {console.log('Conectado a la base de datos')}
+        else {
+            console.log('Conectado a la base de datos')
+
+        }
 })
+
 const app=express()
+
+
 
 app.set("view engine","ejs")
 
 app.use(express.static("public"))
 app.use(bodyParser.urlencoded({ extended:true}));
 app.use(bodyParser.json())
+
 
 app.post("/nuevodato",function(req,res){
   conexion.query(funciones.Insert(req.body),(error,resultados)=>{
@@ -50,128 +59,139 @@ app.post("/borrardato",function(req,res){
       })
   })
 
-  app.post("/editardato",function(req,res){
-    conexion.query(funciones.Edit(req.body),(error,resultados)=>{
-      if (error) {
-          res.send(error)
-      } else {
-          res.redirect("/"+req.body.fuente)        
-      }
-      })
-  })  
+app.post("/editardato",function(req,res){
+conexion.query(funciones.Edit(req.body),(error,resultados)=>{
+    if (error) {
+        res.send(error)
+    } else {
+        res.redirect("/"+req.body.fuente)        
+    }
+    })
+})  
+
+app.post("/getdato",function(req,res){
+   
+    conexion.query(funciones.Get(req.body),(error,resultado)=>{
+        if (error) {
+            res.send(error)
+        } else {
+            res.send(resultado)        
+        }
+        })
+    })
 
 app.get("/reprgremiales",(req,res)=>{
-    conexion.query('select * from ReprGremial',(error,resultados)=>{
+    conexion.query('select * from ReprGremial',(error,datosquery)=>{
         if (error) {
             throw error
         } else {
-            res.render("reprgremiales",{resultado:resultados}) 
+            res.render("comun",{param:paginas.gremio(datosquery)}) 
         }
         })
 }) 
 
-    app.get("/supervision",(req,res)=>{
-        conexion.query('select * from Supervisiones',(error,datosquery)=>{
-            if (error) {
-                throw error
-            } else {
-                res.render("comun",{param:paginas.supervision(datosquery)}) 
-            }
-            })
-       }) 
+app.get("/supervisiones",(req,res)=>{
+    conexion.query('select * from Supervisiones',(error,datosquery)=>{
+        if (error) {
+            throw error
+        } else {
+            res.render("comun",{param:paginas.supervision(datosquery)}) 
+        }
+        })
+    }) 
     
-    app.get("/coordinadores",(req,res)=>{
-        conexion.query('select * from Coordinadores',(error,resultados)=>{
-            if (error) {
-                throw error
-            } else {
-                res.render("coordinadores",{resultado:resultados}) 
-            }
-            })
-       })
+app.get("/coordinadores",(req,res)=>{
+    conexion.query('select * from Coordinadores',(error,datosquery)=>{
+        if (error) {
+            throw error
+        } else {
+            res.render("comun",{param:paginas.coordinacion(datosquery)}) 
+        }
+        })
+    })
        
-    app.get("/especialidades",(req,res)=>{
-        conexion.query('select * from Puestos',(error,resultados)=>{
+app.get("/especialidades",(req,res)=>{
+        conexion.query('select * from Puestos',(error,datosquery)=>{
             if (error) {
                 throw error
             } else {
-                res.render("especialidades",{resultado:resultados}) 
+                res.render("comun",{param:paginas.especialidad(datosquery)}) 
             }
             })
-       })
+    })
     
-    app.get("/coordinaciones",(req,res)=>{
-        conexion.query('select * from Coordinaciones',(error,resultados)=>{
+app.get("/coordinaciones",(req,res)=>{
+        conexion.query('select * from Coordinaciones',(error,datosquery)=>{
             if (error) {
                 throw error
             } else {
-                res.render("coordinaciones",{resultado:resultados}) 
+                res.render("comun",{param:paginas.coordinacion(datosquery)}) 
             }
             })
-       })
+    })
     
-    app.get("/encargados",(req,res)=>{
-        conexion.query('select * from Encargados',(error,resultados)=>{
+app.get("/encargados",(req,res)=>{
+        conexion.query('select * from Encargados',(error,datosquery)=>{
             if (error) {
                 throw error
             } else {
-                res.render("encargados",{resultado:resultados}) 
+                res.render("comun",{param:paginas.encargado(datosquery)}) 
             }
             })
-       })      
+    })      
    
-       app.get("/superior",(req,res)=>{
-        conexion.query('select * from SupInmeds',(error,resultados)=>{
-            if (error) {
-                throw error
-            } else {
-                res.render("supinmeds",{resultado:resultados}) 
-            }
-            })
-       })  
+app.get("/superior",(req,res)=>{
+    conexion.query('select * from SupInmeds',(error,datosquery)=>{
+        if (error) {
+            throw error
+        } else {
+            res.render("comun",{param:paginas.superior(datosquery)}) 
+        }
+        })
+    })  
 
-       app.get("/subregion",(req,res)=>{
-        conexion.query('select * from Subregiones',(error,resultados)=>{
+app.get("/subregiones",(req,res)=>{
+        conexion.query('select * from Subregiones',(error,datosquery)=>{
             if (error) {
                 throw error
             } else {
-                res.render("subregiones",{resultado:resultados}) 
+                res.render("comun",{param:paginas.subregion(datosquery)})  
             }
             })
-       }) 
+    }) 
 
-       app.get("/tiponovedad",(req,res)=>{
-        conexion.query('select * from TiposNovedades',(error,resultados)=>{
-            if (error) {
-                throw error
-            } else {
-                res.render("tiposnovedades",{resultado:resultados}) 
-            }
-            })
-       }) 
+app.get("/tiponovedad",(req,res)=>{
+    conexion.query('select * from TiposNovedades',(error,resultados)=>{
+        if (error) {
+            throw error
+        } else {
+            res.render("tiposnovedades",{resultado:resultados}) 
+        }
+        })
+    }) 
 
-       app.get("/tiponovedadedit",(req,res)=>{
-        conexion.query("select * from TiposNovedades where IdTipoNovedad='"+req.query.id+"'",(error,resultados)=>{
-            if (error) {
-                throw error
-            } else {
-                res.render("tiposnovedades_edit",{resultado:resultados}) 
-            }
-            })
-       }) 
+app.get("/tiponovedadedit",(req,res)=>{
+    conexion.query("select * from TiposNovedades where IdTipoNovedad='"+req.query.id+"'",(error,resultados)=>{
+        if (error) {
+            throw error
+        } else {
+            res.render("tiposnovedades_edit",{resultado:resultados}) 
+        }
+        })
+    }) 
 
        app.get("/empleado",(req,res)=>{
-        conexion.query('select * from Dotacion',(error,resultados)=>{
+        conexion.query('select * from Dotacion',(error,datosquery)=>{
             if (error) {
                 throw error
             } else {
-                res.render("empleados",{resultado:resultados}) 
+                res.render("empleados",{datos:datosquery}) 
             }
             })
        }) 
 
        app.get("/empleadoedit",(req,res)=>{
-            conexion.query("select * from Dotacion where Legajo="+req.query.id,(error,empleados)=>{
+            conexion.query("select * from Dotacion",(error,empleados)=>{
             if (error) { throw error} else {conexion.query("select * from Puestos",(error,puestos)=>{
              if (error) { throw error} else {conexion.query("select * from SupInmeds",(error,supinmeds)=>{
               if (error) { throw error} else {conexion.query("select * from Coordinaciones",(error,coordinaciones)=>{
@@ -186,8 +206,7 @@ app.get("/reprgremiales",(req,res)=>{
             
        })}})}})}})}})}})}})}})}})})
 
-    //Pagina motivos
-       app.get("/motivos",(req,res)=>{
+app.get("/motivos",(req,res)=>{
             let query='select * from Motivos'    
             conexion.query(query,(error,datosquery)=>{
                 if (error) {res.send(error)}

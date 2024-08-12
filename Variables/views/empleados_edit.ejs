@@ -27,34 +27,50 @@
             <div class="cabecera">
                 <span >Modificación de datos</span>
             </div>
-
+            <div class="fila">
+                <label for="">Lectura</label>
+                <div class="cont_vert">
+                    <label for="">Legajo</label>
+                    <select >
+                        <% puestos.forEach((puesto)=>{ %>
+                            <option value=""
+                                
+                                ><%= empleados.Legajo%>
+                            </option>
+                            <% }) %>
+                    </select> 
+            </div>
+            <div class="">
+                <label for="">Edición</label>
+            </div>
+            <!--             
             <div class="cuerpo">
                 <% empleados.forEach((empleado)=>{ %>
-                <!-- Primera fila -->
+                
                 <div class="fila">
-                    <!-- Legajo -->
+                
                     <div class="cont_vert">
                         <label for="">Legajo</label>
                         <input type="text"  value="<%= empleado.Legajo %>">
                     </div>
-                    <!-- Apellido -->
+                
                      <div class="cont_vert">
                         <label for="">Nombre</label>
                         <input type="text" value="<%= empleado.NomApe %>">
                     </div>
-                    <!-- Email -->
+                
                     <div class="cont_vert">
                         <label for="">Dirección de Email</label>
                         <input type="mail" value="<%= empleado.Email %>">
                     </div>
                 </div>    
 
-                <!-- Segunda fila -->
+                
                 <div class="fila">    
-                    <!-- Puesto -->
+                
                     <div class="cont_vert">
                         <label for="">Especialidad</label>
-                        <select>
+                        <select disabled style="-webkit-appearance:none;">
                             <% puestos.forEach((puesto)=>{ %>
                                 <option value=""
                                     <% if (puesto.IdPuesto==empleado.RelPuesto) { %> selected <% } %>
@@ -63,7 +79,7 @@
                                 <% }) %>
                         </select> 
                     </div>
-                    <!-- Reprecentación gremial -->
+                
                     <div class="cont_vert">
                         <label for="">Reprecentación Gremial</label>
                         <select>
@@ -75,7 +91,7 @@
                         </select> 
                          
                     </div>
-                    <!-- Superior Inmediato -->
+                
                     <div class="cont_vert">
                         <label for="">Superior Inmediato</label>
                         <select>
@@ -89,9 +105,9 @@
                     </div> 
                 </div>
 
-                <!-- Tercera fila -->
+                
                 <div class="fila">
-                    <!-- Supervision -->
+                
                     <div class="cont_vert">
                         <label for="">Supervisión</label>
                         <select>
@@ -102,7 +118,7 @@
                                 <% }) %>
                         </select> 
                     </div>
-                    <!-- Subregion -->
+                
                     <div class="cont_vert">
                         <label for="">SubRegión</label>
                         <select>
@@ -113,7 +129,7 @@
                                 <% }) %>
                         </select>
                     </div>  
-                    <!-- Encargado de tiempo -->
+                
                     <div class="cont_vert">
                         <label for="">Encargado de Tiempo</label>
                         <select>
@@ -127,9 +143,9 @@
                     </div> 
                 </div>   
                 
-                <!-- Cuarta fila -->
+                
                 <div class="fila" style="justify-content: space-around;">
-                    <!-- Coordinador -->
+                
                     <div class="cont_vert">
                         <label for="">Coordinador</label>
                         <select>
@@ -141,7 +157,7 @@
                                 <% }) %>
                         </select>
                     </div>
-                    <!-- Coordinacion -->
+                
                     <div class="cont_vert">
                         <label for="">Coordinacion</label>
                         <select>
@@ -153,9 +169,10 @@
                                 <% }) %>
                         </select> 
                     </div>
-                </div>    
+                </div>     -->
                     <div class="menu_form">
-                        <button class="bt_verde">Aceptar</button>    
+                        <button class="bt_verde">Aceptar</button>
+                        <button class="bt_azul">Editar</button>        
                         <a class="bt_rojo" href="/empleado">Cancelar</a>
                     </div>
                 
