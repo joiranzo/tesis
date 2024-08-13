@@ -2,30 +2,45 @@ addEventListener("DOMContentLoaded",(e)=>{
     
    
     
-    // const buscarDato=async (datos) =>{
+    const buscarDato=async (datos) =>{
         
-    //     try {
-    //         const req=await fetch('/getdato',{
-    //             method:'POST',
-    //             body:JSON.stringify(datos),
-    //             headers: {"Content-type": "application/json; charset=UTF-8"}
-    //         })
+        try {
+            const req=await fetch('/getdato',{
+                method:'POST',
+                body:JSON.stringify(datos),
+                headers: {"Content-type": "application/json; charset=UTF-8"}
+            })
 
-    //         return req.json()
-    //     } catch (error){alert(error.message)}
+            return req.json()
+        } catch (error){alert(error.message)}
 
-    // }
+    }
 
-    // const getEmpleado= ()=>{
-    //     buscarDato({tabla:"Dotacion",key:"Legajo",filtro:"602371"})
-    //     .then (data=>{
-    //         const empleado=data
-    //         document.getElementById("Legajo").setAttribute("value",empleado[0].Legajo)
-    //         document.getElementById("NomApe").setAttribute("value",empleado[0].NomApe)
-    //         document.getElementById("Email").setAttribute("value",empleado[0].Email)
-    //         getPuestos()
-    //     })
-    // }
+    const getEmpleado=async  (legajo)=>{
+        buscarDato({tabla:"Dotacion",key:"Legajo",filtro:legajo})
+        .then (data=>{
+            
+            document.getElementById("Legajo").setAttribute("value",data[0].Legajo)
+            document.getElementById("NomApe").setAttribute("value",data[0].NomApe)
+            document.getElementById("Email").setAttribute("value",data[0].Email)
+            document.getElementById("RelPuesto").value=data[0].RelPuesto
+            document.getElementById("RelReprGremial").value=data[0].RelReprGremial
+            document.getElementById("SupInmed").value=data[0].RelSupInmed
+
+            // document.getElementById("RelPuesto")=data[0].RelPuesto
+            // document.getElementById("RelPuesto")=data[0].RelPuesto
+            // document.getElementById("RelPuesto")=data[0].RelPuesto
+            // document.getElementById("RelPuesto")=data[0].RelPuesto
+            // document.getElementById("RelPuesto")=data[0].RelPuesto
+            // document.getElementById("RelPuesto")=data[0].RelPuesto
+            // document.getElementById("RelPuesto")=data[0].RelPuesto
+
+
+            document.getElementById("buscar").style.display="none"
+            document.getElementById("editar").style.display="flex"
+        })
+        .then (datos=>{return datos})
+    }
 
     // const getPuestos= ()=>{
     //     buscarDato({tabla:"Puestos",Key:null})
@@ -35,7 +50,7 @@ addEventListener("DOMContentLoaded",(e)=>{
     // }
     
     const btns_edit=document.getElementsByClassName("bt_azul")
-    
+    const slec_puesto=document.getElementById("RelPuesto")
     // const btns_ok=document.getElementsByClassName("bt_verde")
     // const btns_cancel=document.getElementsByClassName("bt_rojo")
     // const btns_delete=document.getElementsByClassName("bt_delete")
@@ -44,6 +59,7 @@ addEventListener("DOMContentLoaded",(e)=>{
     // const nuevo=document.getElementById("fila_nueva")
     // const btn_cancel_nuevo=document.getElementById("cancel_new")
     const forms=document.getElementsByClassName("fila")
+    var prueba
 
     for (const key in btns_edit) {
         if (Object.prototype.hasOwnProperty.call(btns_edit, key)) {
@@ -51,15 +67,13 @@ addEventListener("DOMContentLoaded",(e)=>{
         
         btn.addEventListener("click",(e)=>{
             e.preventDefaul
-            // getEmpleado()
+            prueba=getEmpleado(forms[key].childNodes[1].innerText)
             //let puestos=getDatos({tabla:"Puestos",Key:null})
            
-            //console.log(puestos)
+            console.log(prueba)
         
             
-            console.log(forms[key].childNodes)
-            document.getElementById("buscar").style.display="none"
-            document.getElementById("editar").style.display="flex"
+            
             
         })
     }}};

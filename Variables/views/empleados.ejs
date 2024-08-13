@@ -17,9 +17,9 @@
         <div class="fila_principal">
             <h3>Empleados</h3>
             <div class="menu_fila col3">
-                <a class="material-symbols-outlined bt_azul" href="#" 
+                <a class="material-symbols-outlined bt_nuevo" href="#" 
                     title="Nuevo">note_add</a>
-                <a class="material-symbols-outlined icon bt_azul" href="#"
+                <a class="material-symbols-outlined bt_nuevo" href="#"
                     title="Inicio">home</a>
             </div>
 
@@ -41,9 +41,6 @@
                         </label>
                         <label class="col2">
                             <%= dato.NomApe %>
-                        </label> 
-                        <label name="email" style="display: none;" >
-                            <%= dato.email %>
                         </label> 
                         <div class="menu_fila col3">
                             <a class="material-symbols-outlined bt_azul"  
@@ -79,9 +76,9 @@
                 
                     <div class="cont_vert">
                         <label for="">Especialidad</label>
-                        <select >
+                        <select id="RelPuesto">
                                 <%  puestos.forEach((dato)=>{ %>
-                                    <option value="<%= dato.IdPuesto %> "> <%= dato.NomPuesto %></option>
+                                    <option value="<%= dato.IdPuesto %>"> <%= dato.NomPuesto %></option>
                                 <%}); %>
                             
                         </select> 
@@ -89,18 +86,18 @@
                 
                     <div class="cont_vert">
                         <label for="">Reprecentación Gremial</label>
-                        <select>
+                        <select id="RelReprGremial">
                             <%  gremios.forEach((dato)=>{ %>
-                                <option value="<%= dato.IdReprGremial %> "> <%= dato.NomReprGremial %></option>
+                                <option value="<%= dato.IdReprGremial %>"> <%= dato.NomReprGremial %></option>
                             <%}); %>                                
                         </select> 
                     </div>
                 
                     <div class="cont_vert">
                         <label for="">Superior Inmediato</label>
-                        <select>
+                        <select id="SupInmed">
                             <%  supinmeds.forEach((dato)=>{ %>
-                                <option value="<%= dato.IdSupInmed %> "> <%= dato.NomSupInmed %></option>
+                                <option value="<%= dato.IdSupInmed %>"> <%= dato.NomSupInmed %></option>
                             <%}); %>
                         </select> 
                     </div> 
