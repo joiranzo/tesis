@@ -34,7 +34,7 @@
             </div>
 
             <div class="cuerpo" id="buscar">
-                <% param.empleados.forEach((dato)=>{ %>
+                <% empleados.forEach((dato)=>{ %>
                     <div class="fila">
                         <label class="col1">
                             <%= dato.Legajo %>
@@ -77,9 +77,9 @@
                     <div class="cont_vert">
                         <label for="">Especialidad</label>
                         <select >
-                            
-                                <option value=""></option>
-                                
+                                <%  puestos.forEach((dato)=>{ %>
+                                    <option value="<%= dato.IdPuesto %> "> <%= dato.NomPuesto %></option>
+                                <%}); %>
                             
                         </select> 
                     </div>
@@ -87,24 +87,18 @@
                     <div class="cont_vert">
                         <label for="">Reprecentación Gremial</label>
                         <select>
-                            
-                                <option value="">
-                            
-                               </option>
-                                
+                            <%  gremios.forEach((dato)=>{ %>
+                                <option value="<%= dato.IdReprGremial %> "> <%= dato.NomReprGremial %></option>
+                            <%}); %>                                
                         </select> 
-                         
                     </div>
                 
                     <div class="cont_vert">
                         <label for="">Superior Inmediato</label>
                         <select>
-                            
-                                <option value=""
-                            
-                              >
-                                </option>
-                              
+                            <%  supinmeds.forEach((dato)=>{ %>
+                                <option value="<%= dato.IdSupInmed %> "> <%= dato.NomSupInmed %></option>
+                            <%}); %>
                         </select> 
                     </div> 
                 </div>
@@ -115,32 +109,27 @@
                     <div class="cont_vert">
                         <label for="">Supervisión</label>
                         <select>
-                            
-                                <option value=""
-                            
-                                ></option>
-                                
+                            <%  supervisiones.forEach((dato)=>{ %>
+                                <option value="<%= dato.IdSupervision %> "> <%= dato.NomSupervision %></option>
+                            <%}); %>
                         </select> 
                     </div>
                 
                     <div class="cont_vert">
                         <label for="">SubRegión</label>
                         <select>
-                            
-                                <option value=""
-                           ></option>
-                            
+                            <%  subregiones.forEach((dato)=>{ %>
+                                <option value="<%= dato.IdSubregion %> "> <%= dato.NomSubregion %></option>
+                            <%}); %>
                         </select>
                     </div>  
                 
                     <div class="cont_vert">
                         <label for="">Encargado de Tiempo</label>
                         <select>
-                            
-                                <option value=""
-                            >
-                                </option>
-                            
+                            <%  encargados.forEach((dato)=>{ %>
+                                <option value="<%= dato.IdEncargado %> "> <%= dato.NomEncargado %></option>
+                            <%}); %>
                         </select>
                     </div> 
                 </div>   
@@ -150,18 +139,19 @@
                 
                     <div class="cont_vert">
                         <label for="">Coordinador</label>
-                        <select>
-                            
-                                <option value=""></option>
-                                
+                        <select name="" id="">
+                            <%  coordinadores.forEach((dato)=>{ %>
+                                <option value="<%= dato.IdCoordinador %> "> <%= dato.NomCoordinador %></option>
+                            <%}); %>
                         </select>
                     </div>
                 
                     <div class="cont_vert">
                         <label for="">Coordinacion</label>
                         <select>
-                            
-                                <option value=""></option>
+                            <%  coordinaciones.forEach((dato)=>{ %>
+                                <option value="<%= dato.IdCoordinacion %> "> <%= dato.NomCoordinacion %></option>
+                            <%}); %>
                                 
                         </select> 
                     </div>

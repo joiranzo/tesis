@@ -187,19 +187,19 @@ app.get("/tiponovedadedit",(req,res)=>{
         })
     }) 
 
-app.get("/empleado",(req,res)=>{
-conexion.query('select * from Dotacion',(error,datosquery)=>{
-    if (error) {
-        throw error
-    } else {
-        console.log(paginas.empleado(conexion,datosquery).puestos)
-       res.send(paginas.empleado(conexion,datosquery).puestos)
-        //res.render("empleados",{param:paginas.empleado(conexion,datosquery)})
-    }
-    })
-}) 
+// app.get("/empleado",(req,res)=>{
+// conexion.query('select * from Dotacion',(error,datosquery)=>{
+//     if (error) {
+//         throw error
+//     } else {
+//         console.log(paginas.empleado(conexion,datosquery).puestos)
+//        res.send(paginas.empleado(conexion,datosquery).puestos)
+//         //res.render("empleados",{param:paginas.empleado(conexion,datosquery)})
+//     }
+//     })
+// }) 
 
-app.get("/empleadoedit",(req,res)=>{
+app.get("/empleado",(req,res)=>{
     conexion.query("select * from Dotacion",(error,empleados)=>{
     if (error) { throw error} else {conexion.query("select * from Puestos",(error,puestos)=>{
         if (error) { throw error} else {conexion.query("select * from SupInmeds",(error,supinmeds)=>{
@@ -210,7 +210,7 @@ app.get("/empleadoedit",(req,res)=>{
             if (error) { throw error} else {conexion.query("select * from Subregiones",(error,subregiones)=>{
             if (error) { throw error} else {conexion.query("select * from Supervisiones",(error,supervisiones)=>{
                 if (error) { throw error} else     
-        {res.render("empleados_edit",{empleados,puestos,supinmeds,coordinaciones,coordinadores,encargados,
+        {res.render("empleados",{empleados,puestos,supinmeds,coordinaciones,coordinadores,encargados,
         gremios,subregiones,supervisiones})}
     
 })}})}})}})}})}})}})}})}})})

@@ -223,21 +223,7 @@ function getPuestos(datosquery){
    
     return pag
 }
-function getEmpleados(conexion,datosquery){
-    conexion.query("Select * from `Puestos`",(error,puestos)=>{
-        if (error) {
-            throw console.log(error)
-        } else {    
-            let pagina={
-                puestos:puestos
-        // empleados:datosquery,
-        // puestos:conexion.query("Select * from "+getPuestos(null).tabla)
-        // // empleados:Object.values(JSON.parse(JSON.stringify(datosquery)))
-    }}
-    console.log(pagina)
-    return pagina
-    
-})}
+
 
 module.exports={
     "motivo":getMotivos,
@@ -250,5 +236,5 @@ module.exports={
     "subregion":getSubregiones,
     "coordinacion":getCoordinaciones,
     "puesto":getPuestos,
-    "empleado":getEmpleados
+    
 }
