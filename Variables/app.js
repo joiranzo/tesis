@@ -4,19 +4,19 @@ const bodyParser = require('body-parser');
 const funciones=require("./js/funciones")
 const paginas=require("./js/paginas")
 
-const conexion=mysql.createConnection({
-    host:'localhost',
-    database:'NuevaVariables',
-    user:'root',
-    password:''
-})
-
 // const conexion=mysql.createConnection({
-//          host:'bvu4zofwdepeltug1eav-mysql.services.clever-cloud.com',
-//          database:'bvu4zofwdepeltug1eav',
-//          user:'um79iibw1rdmkdoc',
-//          password:'crQgdcAwWLRk4fH1hmPA'
-//      })
+//     host:'localhost',
+//     database:'NuevaVariables',
+//     user:'root',
+//     password:''
+// })
+
+const conexion=mysql.createConnection({
+         host:'bvu4zofwdepeltug1eav-mysql.services.clever-cloud.com',
+         database:'bvu4zofwdepeltug1eav',
+         user:'um79iibw1rdmkdoc',
+         password:'crQgdcAwWLRk4fH1hmPA'
+     })
 
 
 
