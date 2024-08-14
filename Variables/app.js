@@ -58,12 +58,12 @@ app.post("/borrardato",function(req,res){
 })
 
 app.post("/editardato",function(req,res){
-conexion.query(funciones.Edit(req.body),(error,resultados)=>{
-    if (error) {
-        res.send(error)
-    } else {
-        res.redirect("/"+req.body.fuente)        
-    }
+    conexion.query(funciones.Edit(req.body),(error,resultados)=>{
+        if (error) {
+            res.send(error)
+        } else {
+            res.redirect("/"+req.body.fuente)        
+        }
     })
 })  
 
