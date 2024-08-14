@@ -41,7 +41,7 @@ addEventListener("DOMContentLoaded",(e)=>{
     // }
     
     const btns_edit=document.getElementsByClassName("bt_azul")
-    const slec_puesto=document.getElementById("RelPuesto")
+    // const slec_puesto=document.getElementById("RelPuesto")
     // const btns_ok=document.getElementsByClassName("bt_verde")
     // const btns_cancel=document.getElementsByClassName("bt_rojo")
     // const btns_delete=document.getElementsByClassName("bt_delete")
