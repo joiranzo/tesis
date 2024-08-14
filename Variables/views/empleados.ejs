@@ -35,7 +35,7 @@
 
             <div class="cuerpo" id="buscar">
                 <% empleados.forEach((dato)=>{ %>
-                    <div class="fila">
+                    <div class="fila_hover">
                         <label class="col1">
                             <%= dato.Legajo %>
                         </label>
@@ -50,14 +50,13 @@
                 <% }); %>
 
             </div>
-            <div class="cuerpo" id="editar">
-                
-                
+    
+            <form class="cuerpo" id="editar" style="display: none;">
                 <div class="fila">
-                
+               
                     <div class="cont_vert">
                         <label for="">Legajo</label>
-                        <input type="text"  id="Legajo" name="Legajo" value="">
+                        <input type="text"  id="Legajo" name="Legajo" value="" disabled>
                     </div>
                 
                      <div class="cont_vert">
@@ -95,7 +94,7 @@
                 
                     <div class="cont_vert">
                         <label for="">Superior Inmediato</label>
-                        <select id="SupInmed">
+                        <select id="RelSupInmed">
                             <%  supinmeds.forEach((dato)=>{ %>
                                 <option value="<%= dato.IdSupInmed %>"> <%= dato.NomSupInmed %></option>
                             <%}); %>
@@ -108,27 +107,27 @@
                 
                     <div class="cont_vert">
                         <label for="">Supervisión</label>
-                        <select>
+                        <select id="RelSupervision">
                             <%  supervisiones.forEach((dato)=>{ %>
-                                <option value="<%= dato.IdSupervision %> "> <%= dato.NomSupervision %></option>
+                                <option value="<%= dato.IdSupervision %>"> <%= dato.NomSupervision %></option>
                             <%}); %>
                         </select> 
                     </div>
                 
                     <div class="cont_vert">
                         <label for="">SubRegión</label>
-                        <select>
+                        <select id="RelSubregion">
                             <%  subregiones.forEach((dato)=>{ %>
-                                <option value="<%= dato.IdSubRegion %> "> <%= dato.NomSubRegion %></option>
+                                <option value="<%= dato.IdSubRegion %>"> <%= dato.NomSubRegion %></option>
                             <%}); %>
                         </select>
                     </div>  
                 
                     <div class="cont_vert">
                         <label for="">Encargado de Tiempo</label>
-                        <select>
+                        <select id="RelEncargTiempo">
                             <%  encargados.forEach((dato)=>{ %>
-                                <option value="<%= dato.IdEncargado %> "> <%= dato.NomEncargado %></option>
+                                <option value="<%= dato.IdEncargado %>"> <%= dato.NomEncargado %></option>
                             <%}); %>
                         </select>
                     </div> 
@@ -139,18 +138,18 @@
                 
                     <div class="cont_vert">
                         <label for="">Coordinador</label>
-                        <select name="" id="">
+                        <select name="" id="RelCoordinador">
                             <%  coordinadores.forEach((dato)=>{ %>
-                                <option value="<%= dato.IdCoordinador %> "> <%= dato.NomCoordinador %></option>
+                                <option value="<%= dato.IdCoordinador %>"> <%= dato.NomCoordinador %></option>
                             <%}); %>
                         </select>
                     </div>
                 
                     <div class="cont_vert">
                         <label for="">Coordinacion</label>
-                        <select>
+                        <select id="RelCoordinacion">
                             <%  coordinaciones.forEach((dato)=>{ %>
-                                <option value="<%= dato.IdCoordinacion %> "> <%= dato.NomCoordinacion %></option>
+                                <option value="<%= dato.IdCoordinacion %>"> <%= dato.NomCoordinacion %></option>
                             <%}); %>
                                 
                         </select> 
@@ -161,8 +160,7 @@
                         <button class="bt_rojo">Borrar</button>        
                         <a class="bt_rojo" href="/empleado">Cancelar</a>
                     </div>
-                
-              
+            </form>          
         </div>
 
     </div>
