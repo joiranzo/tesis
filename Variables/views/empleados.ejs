@@ -19,6 +19,8 @@
             <div class="menu_fila col3">
                 <a class="material-symbols-outlined bt_nuevo" href="#" 
                     title="Nuevo">note_add</a>
+                <a class="material-symbols-outlined bt_nuevo" href="#" id="btn_search"
+                    title="Nuevo">search</a>    
                 <a class="material-symbols-outlined bt_nuevo" href="/index.html#"
                     title="Inicio">home</a>
             </div>
@@ -34,12 +36,17 @@
             </div>
 
             <div class="cuerpo" id="buscar">
+                <div class="fila_buscar" id="fila_buscar" style="display: none;">
+                    <input class="col1" type="text" placeholder="Buscar por legajo" id="legajoSearch">
+                    <input class="col2" type="text" placeholder="Buscar por nombre" id="nomApeSearch" >
+                    <div class="col3"></div>
+                </div>
                 <% empleados.forEach((dato)=>{ %>
                     <div class="fila_hover">
-                        <label class="col1">
+                        <label class="col1" name="Legajo">
                             <%= dato.Legajo %>
                         </label>
-                        <label class="col2">
+                        <label class="col2" name="nomApe">
                             <%= dato.NomApe %>
                         </label> 
                         <div class="menu_fila col3">
@@ -160,7 +167,7 @@
                     <div class="menu_form">
                         <button type="submit" class="bt_verde">Aceptar</button>
                         <button class="bt_rojo">Borrar</button>        
-                        <button type="reset" class="bt_rojo_nuevo">Cancelar</button> 
+                        <button type="reset" class="bt_rojo_nuevo" id="btn_cancel">Cancelar</button> 
                     </div>
             </form>          
         </div>

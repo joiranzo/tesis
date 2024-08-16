@@ -41,11 +41,12 @@ addEventListener("DOMContentLoaded",(e)=>{
     // }
     
     const btns_edit=document.getElementsByClassName("bt_azul")
-    // const slec_puesto=document.getElementById("RelPuesto")
-    // const btns_ok=document.getElementsByClassName("bt_verde")
-    // const btns_cancel=document.getElementsByClassName("bt_rojo")
-    // const btns_delete=document.getElementsByClassName("bt_delete")
-    // const btn_nuevo=document.getElementById("bt_nuevo")
+    const lbs_legajo=document.getElementsByName("Legajo")
+    const inp_legajo=document.getElementById("legajoSearch")
+    const inp_nomApe=document.getElementById("nomApeSearch")
+    const lbs_nomApe=document.getElementsByName("nomApe")
+    const btn_search=document.getElementById("btn_search")
+    const btn_cancel=document.getElementById("btn_cancel")
     // const inps=document.getElementsByClassName("editable")
     // const nuevo=document.getElementById("fila_nueva")
     // const btn_cancel_nuevo=document.getElementById("cancel_new")
@@ -62,4 +63,50 @@ addEventListener("DOMContentLoaded",(e)=>{
         
         })
     }}};
+
+    inp_legajo.addEventListener("input",(e)=>{
+        e.preventDefault;
+        for (const key in lbs_legajo) {
+            if (Object.prototype.hasOwnProperty.call(lbs_legajo, key)) {
+                const element = lbs_legajo[key];
+                
+                if (!element.innerText.includes(e.target.value)) 
+                    element.parentElement.style.display="none"
+                else 
+                    element.parentElement.style.display="flex"
+                
+           }
+        }
+    })
+
+    inp_nomApe.addEventListener("input",(e)=>{
+        e.preventDefault;
+        for (const key in lbs_nomApe) {
+            if (Object.prototype.hasOwnProperty.call(lbs_nomApe, key)) {
+                const element = lbs_nomApe[key];
+                
+                if (!element.innerText.includes(e.target.value.toUpperCase())) 
+                    element.parentElement.style.display="none"
+                else 
+                    element.parentElement.style.display="flex"
+                
+           }
+        }
+    })
+
+    btn_search.addEventListener("click",(e)=>{
+        let buscar=document.getElementById("fila_buscar")
+        e.preventDefaul
+        if (buscar.style.display=='none')
+            buscar.style.display='flex'
+        else
+            buscar.style.display='none'
+    })
+
+    btn_cancel.addEventListener("click",e=>{
+        e.preventDefault
+        document.getElementById("buscar").style.display="flex"
+        document.getElementById("editar").style.display="none"
+    
+    })
 })    

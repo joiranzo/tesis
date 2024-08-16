@@ -71,7 +71,7 @@ span{
     padding-bottom:0.5rem ;
 }
 
-.fila_hover,.fila{
+.fila_hover,.fila,.fila_buscar{
     display: flex;
     justify-content: space-around;
     align-items: center;
