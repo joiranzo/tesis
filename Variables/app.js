@@ -177,15 +177,15 @@ app.get("/tiponovedad",(req,res)=>{
         })
     }) 
 
-app.get("/tiponovedadedit",(req,res)=>{
-    conexion.query("select * from TiposNovedades where IdTipoNovedad='"+req.query.id+"'",(error,resultados)=>{
-        if (error) {
-            throw error
-        } else {
-            res.render("tiposnovedades_edit",{resultado:resultados}) 
-        }
-        })
-    }) 
+// app.get("/tiponovedadedit",(req,res)=>{
+//     conexion.query("select * from TiposNovedades where IdTipoNovedad='"+req.query.id+"'",(error,resultados)=>{
+//         if (error) {
+//             throw error
+//         } else {
+//             res.render("tiposnovedades_edit",{resultado:resultados}) 
+//         }
+//         })
+//     }) 
 
 // app.get("/empleado",(req,res)=>{
 // conexion.query('select * from Dotacion',(error,datosquery)=>{

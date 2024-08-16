@@ -21,7 +21,7 @@ function generarInsert(body){
 function generarDelete(body){
  
     let consulta="DELETE FROM `"+body.tabla+"` WHERE `"+body.prikey+"`='"+body[body.prikey]+"'" 
-    
+   
     return consulta
 }
 

@@ -23,6 +23,8 @@ body{
     flex-direction: column;
     margin: 1rem auto;
     max-width: 95%;
+    max-height: 95vh;
+    overflow-y: hidden;
 }
 
 .fila_principal{
@@ -45,7 +47,7 @@ body{
     border: 2px solid var(--color_borde);
     border-radius: var(--radio_borde);
     padding: 0.5rem 0.5rem 1rem 0.5rem;
-    max-height: 87vh;
+    
 }
 
 .cabecera{
@@ -66,9 +68,10 @@ span{
 .cuerpo{
     display: flex;
     flex-direction: column;
-    max-height: 80vh;
+    height: 73vh;
     overflow-y: auto;
     padding-bottom:0.5rem ;
+    
 }
 
 .fila_hover,.fila,.fila_buscar{
