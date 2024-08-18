@@ -19,7 +19,7 @@
                     title="Nuevo">note_add</a>
                 <a class="material-symbols-outlined bt_nuevo" href="#" id="btn_search"
                     title="Nuevo">search</a>    
-                <a class="material-symbols-outlined bt_nuevo" href="#"
+                <a class="material-symbols-outlined bt_nuevo" href="/index.html"
                     title="Inicio">home</a>
             </div>
         </div>
@@ -34,16 +34,16 @@
 
             <div class="cuerpo" id="buscar">
                 <div class="fila_buscar" id="fila_buscar" style="display: none;">
-                    <input class="col1" type="text" placeholder="Buscar por código" id="legajoSearch">
-                    <input class="col2" type="text" placeholder="Buscar por descripcion" id="nomApeSearch" >
+                    <input class="col1" type="text" placeholder="Buscar por código" id="novedadSearch">
+                    <input class="col2" type="text" placeholder="Buscar por descripcion" id="nomSearch" >
                     <div class="col3"></div>
                 </div>
                 <% resultado.forEach((cliente)=>{ %>
                     <div class="fila_hover">
-                        <label class="col1">
+                        <label class="col1" name="novedad">
                             <%= cliente.IdTipoNovedad%>
                         </label>
-                        <label class="col2">
+                        <label class="col2" name="nombre">
                             <%= cliente.Nombre %>
                         </label> 
                         <div class="menu_fila col3">
@@ -77,7 +77,7 @@
                      <!-- Motivo -->
                      <div class="cont_vert">
                         <label for="">Corresponde Motivo</label>
-                        <input type="checkbox">
+                        <input type="checkbox" Id="Motivo" name="Motivo">
                     </div> 
                 </div>    
 
@@ -86,17 +86,17 @@
                      <!-- Limite Diario -->
                      <div class="cont_vert">
                         <label for="">Limite Diario</label>
-                        <input type="mail" value="">
+                        <input type="number" Id="LimiteDiario" name="LimiteDiario">
                     </div>
                     <!-- Límite mensual -->
                     <div class="cont_vert">
                         <label for="">Límite Mensual</label>
-                        <input type="mail" value="">
+                        <input type="number" Id="LimiteMensual" name="LimiteMensual">
                     </div>
                     <!-- Límite anual -->
                     <div class="cont_vert">
                         <label for="">Límite Anual</label>
-                        <input type="mail" value="">
+                        <input type="number" Id="LimiteAnual" name="LimiteAnual">
                          
                     </div>
                    
@@ -108,17 +108,17 @@
                     <!-- Descripción de la novedad-->
                     <div class="cont_vert">
                         <label for="">Descripción</label>
-                        <textarea ></textarea>
+                        <textarea Id="Descripcion" name="Descripcion"></textarea>
                     </div>  
                     <!-- Cuando se usa -->
                     <div class="cont_vert">
                         <label for="">Utilizacion</label>
-                        <textarea ></textarea>
+                        <textarea Id="Utilizacion" name="Utilizacion"></textarea>
                     </div> 
                     <!-- modo de uso -->
                      <div class="cont_vert">
                         <label for="">Modo de Uso</label>
-                        <textarea ></textarea>
+                        <textarea Id="Uso" name="Uso"></textarea>
                     </div>
                 </div>   
                 

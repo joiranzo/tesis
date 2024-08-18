@@ -177,27 +177,13 @@ app.get("/tiponovedad",(req,res)=>{
         })
     }) 
 
-// app.get("/tiponovedadedit",(req,res)=>{
-//     conexion.query("select * from TiposNovedades where IdTipoNovedad='"+req.query.id+"'",(error,resultados)=>{
-//         if (error) {
-//             throw error
-//         } else {
-//             res.render("tiposnovedades_edit",{resultado:resultados}) 
-//         }
-//         })
-//     }) 
-
-// app.get("/empleado",(req,res)=>{
-// conexion.query('select * from Dotacion',(error,datosquery)=>{
-//     if (error) {
-//         throw error
-//     } else {
-//         console.log(paginas.empleado(conexion,datosquery).puestos)
-//        res.send(paginas.empleado(conexion,datosquery).puestos)
-//         //res.render("empleados",{param:paginas.empleado(conexion,datosquery)})
-//     }
-//     })
-// }) 
+app.get("/novedadesxgremio",(req,res)=>{
+    conexion.query("select * from ReprGremial",(error,gremios)=>{
+    if (error) { throw error} else {conexion.query("select * from TiposNovedades",(error,tiposnovedades)=>{
+        if (error) { throw error} else {conexion.query("select * from NovedadesxGremio",(error,novedadesxgremio)=>{        
+            if (error) { throw error} else     
+                {res.render("novedadesxgremio",{gremios,tiposnovedades,novedadesxgremio})}
+        })}})}})})
 
 app.get("/empleado",(req,res)=>{
     conexion.query("select * from Dotacion",(error,empleados)=>{

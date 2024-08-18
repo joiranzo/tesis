@@ -19,13 +19,13 @@ addEventListener("DOMContentLoaded",(e)=>{
             document.getElementById("IdTipoNovedad").setAttribute("value",data[0].IdTipoNovedad)
             document.getElementById("Nombre").setAttribute("value",data[0].Nombre)
             if (data[0].Rango) {document.getElementById("Rango").setAttribute("checked","")}
-            
-            // document.getElementById("RelPuesto").value=data[0].RelPuesto
-            // document.getElementById("RelReprGremial").value=data[0].RelReprGremial
-            // document.getElementById("RelSupInmed").value=data[0].RelSupInmed
-            // document.getElementById("RelSupervision").value=data[0].RelSupervision
-            // document.getElementById("RelSubregion").value=data[0].RelSubRegion
-            // document.getElementById("RelEncargTiempo").value=data[0].RelEncargTiempos
+            if (data[0].Motivo) {document.getElementById("Motivo").setAttribute("checked","")}
+            document.getElementById("LimiteDiario").value=data[0].LimiteDiario
+            document.getElementById("LimiteMensual").value=data[0].LimiteMensual
+            document.getElementById("LimiteAnual").value=data[0].LimiteAnual
+            document.getElementById("Descripcion").value=data[0].Descripcion
+            document.getElementById("Utilizacion").value=data[0].Utilizacion
+            document.getElementById("Uso").value=data[0].Uso
             // document.getElementById("RelCoordinador").value=data[0].RelCoordinador
             // document.getElementById("RelCoordinacion").value=data[0].RelCoordinacion
             document.getElementById("buscar").style.display="none"
@@ -35,10 +35,10 @@ addEventListener("DOMContentLoaded",(e)=>{
     }
 
     const btns_edit=document.getElementsByClassName("bt_azul")
-    const lbs_legajo=document.getElementsByName("Legajo")
-    const inp_legajo=document.getElementById("legajoSearch")
-    const inp_nomApe=document.getElementById("nomApeSearch")
-    const lbs_nomApe=document.getElementsByName("nomApe")
+    const lbs_novedad=document.getElementsByName("novedad")
+    const inp_novedad=document.getElementById("novedadSearch")
+    const inp_nombre=document.getElementById("nomSearch")
+    const lbs_nombre=document.getElementsByName("nombre")
     const btn_search=document.getElementById("btn_search")
     const btn_cancel=document.getElementById("btn_cancel")
     const btn_delete=document.getElementById("btn_delete")
@@ -56,11 +56,11 @@ addEventListener("DOMContentLoaded",(e)=>{
         })
     }}};
 
-    inp_legajo.addEventListener("input",(e)=>{
+    inp_novedad.addEventListener("input",(e)=>{
         e.preventDefault;
-        for (const key in lbs_legajo) {
-            if (Object.prototype.hasOwnProperty.call(lbs_legajo, key)) {
-                const element = lbs_legajo[key];
+        for (const key in lbs_novedad) {
+            if (Object.prototype.hasOwnProperty.call(lbs_novedad, key)) {
+                const element = lbs_novedad[key];
                 
                 if (!element.innerText.includes(e.target.value)) 
                     element.parentElement.style.display="none"
@@ -71,13 +71,13 @@ addEventListener("DOMContentLoaded",(e)=>{
         }
     })
 
-    inp_nomApe.addEventListener("input",(e)=>{
+    inp_nombre.addEventListener("input",(e)=>{
         e.preventDefault;
-        for (const key in lbs_nomApe) {
-            if (Object.prototype.hasOwnProperty.call(lbs_nomApe, key)) {
-                const element = lbs_nomApe[key];
+        for (const key in lbs_nombre) {
+            if (Object.prototype.hasOwnProperty.call(lbs_nombre, key)) {
+                const element = lbs_nombre[key];
                 
-                if (!element.innerText.includes(e.target.value.toUpperCase())) 
+                if (!element.innerText.toUpperCase().includes(e.target.value.toUpperCase())) 
                     element.parentElement.style.display="none"
                 else 
                     element.parentElement.style.display="flex"

@@ -218,3 +218,15 @@ a{text-decoration: none;}
 
 h3{color:var(--color_borde)};
 
+.n1{
+    display: flex;
+    flex-direction: column;
+}
+
+.n2{
+    display: flex;
+}
+
+.seleccionado{
+    background-color:white;
+}
