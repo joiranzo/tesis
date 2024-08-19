@@ -3,7 +3,26 @@ addEventListener("DOMContentLoaded",(e)=>{
     const corresponde=document.getElementsByName("corresponde")
     const activar=document.getElementById("btn_activar")
     const desactivar=document.getElementById("btn_desactivar")
-    
+    const si=document.getElementById("si")
+
+    function insertar (nuevo,elemento) {
+        if (elemento.children.length==0) {
+            elemento.append(nuevo)
+        } else {
+
+        for (const element of elemento.children) {
+            if (nuevo.children[0].innerHTML>element.children[0].innerHTML) {}
+            else { 
+                elemento.insertBefore(nuevo,element)
+                
+            }
+        }}
+         
+        
+            
+        
+    }
+
     for (const key in nocorresponde) {
         if (Object.prototype.hasOwnProperty.call(nocorresponde, key)) {
             const element = nocorresponde[key];
@@ -33,8 +52,8 @@ addEventListener("DOMContentLoaded",(e)=>{
                 
                 if (element.classList.contains("seleccionado")){
                     element.classList.toggle("seleccionado")
-                    element.style.display="none"
-                    corresponde[key].style.display="block"
+                    element.parentElement.removeChild(element)
+                    insertar(element,si)
                 }
             }
         }
@@ -49,6 +68,7 @@ addEventListener("DOMContentLoaded",(e)=>{
                     element.classList.toggle("seleccionado")
                     element.style.display="none"
                     nocorresponde[key].style.display="block"
+
                 }
             }
         }
