@@ -1,0 +1,48 @@
+.cuerpo_novedades{
+    display: flex;
+    max-height: 90vh;
+    
+    
+    margin-top: 0.5rem;
+}
+
+.panel_novedades{
+    flex-basis: 48%;
+    border: 2px solid var(--color_borde);
+    max-height: 85vh;
+    border-radius: 8px;
+    padding: 0.5rem;
+}
+
+.titulo_novedades{
+    color:var(--color_borde);
+    text-align: center;
+    font-weight: bolder;    
+    margin: 0 auto;   
+}
+
+.novedades{
+    overflow-y:auto;
+    height: 98%;
+
+    
+}.novedad:nth-of-type(2n+1){
+    background-color:rgb(240,240,240)
+}
+.control_novedades{
+    display: flex;
+    flex-direction: column;
+    margin:0 1rem 0 1rem;
+    justify-content: center;
+
+    >button{
+        color:var(--color_borde);
+        border: none;
+        background-color: transparent;
+        margin: 1rem 0 1rem 0;
+    }
+}
+
+.seleccionado{
+    background-color:white;
+}
