@@ -5,6 +5,13 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "type": "java",
+            "name": "Clase1",
+            "request": "launch",
+            "mainClass": "Issd.Semestre4.Clase1",
+            "projectName": "MiRepositorio_4e21e102"
+        },
+        {
             "name": "Launch built-in server and debug",
             "type": "php",
             "request": "launch",
