@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Lista",
+            "request": "launch",
+            "mainClass": "Issd.Semestre4.Ed4.Lista",
+            "projectName": "MiRepositorio_4e21e102"
+        },
+        {
+            "type": "java",
             "name": "Clase1",
             "request": "launch",
             "mainClass": "Issd.Semestre4.Clase1",
