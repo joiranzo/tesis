@@ -1,4 +1,6 @@
-public class Generica {
+
+
+    public class Generica {
     
     class Nodo{
         int info;
@@ -43,17 +45,35 @@ public class Generica {
 
     //Extrae la información del nodo de la posición indicada (pos). Se debe eliminar el nodo.
     public int extraer(int pos){
-        int cont=1;
-        Nodo reco=raiz;
-        if (pos<=cantidad()){
+        
+        if (posok(pos)){
+            int cont=1;
+            Nodo reco=raiz;
             while (cont!=(pos-1)){
                 reco=reco.sig;
                 cont++;
-            }
+            }    
+            return reco.info;    
+        }
+        else
+            return Integer.MAX_VALUE;    
     }
 
     //Borra el nodo de la posición (pos).
-    public void borrar(int pos){}
+    public void borrar(int pos){
+        if (posok(pos)){
+            int cont=1;
+            Nodo reco=raiz;
+            Nodo siguiente=null;
+            while (cont!=(pos-1)){
+                reco=reco.sig;
+                cont++;
+            }    
+            siguiente=reco.sig;
+            reco.sig=siguiente.sig;
+        }
+        
+    }
     //Intercambia las informaciones de los nodos de las posiciones pos1 y pos2.
     public void intercambiar(int pos1,int pos2){}
     //Retorna el valor del nodo con mayor información.
@@ -86,7 +106,6 @@ public class Generica {
     public boolean existe(int info){
         return false;
     }    
-    
     //El método vacía debe retornar true si está vacía y false si no lo está.
     public boolean vacia(){
         if (raiz==null) 
