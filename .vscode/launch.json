@@ -6,6 +6,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "ListaOrdenada",
+            "request": "launch",
+            "mainClass": "ListaOrdenada",
+            "projectName": "MiRepositorio_8337381f"
+        },
+        {
+            "type": "java",
+            "name": "Lista",
+            "request": "launch",
+            "mainClass": "Lista",
+            "projectName": "MiRepositorio_8337381f"
+        },
+        {
+            "type": "java",
             "name": "Lista",
             "request": "launch",
             "mainClass": "Issd.Semestre4.Ed4.Lista",
