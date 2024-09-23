@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "ListaGenericaDoble",
+            "request": "launch",
+            "mainClass": "ListaGenericaDoble",
+            "projectName": "MiRepositorio_8337381f"
+        },
+        {
+            "type": "java",
             "name": "ListaOrdenada",
             "request": "launch",
             "mainClass": "ListaOrdenada",
