@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "DesemListas",
+            "request": "launch",
+            "mainClass": "DesemListas",
+            "projectName": "MiRepositorio_8337381f"
+        },
+        {
+            "type": "java",
             "name": "ListaGenericaDoble",
             "request": "launch",
             "mainClass": "ListaGenericaDoble",
