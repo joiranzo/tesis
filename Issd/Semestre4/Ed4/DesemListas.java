@@ -71,28 +71,29 @@ public class DesemListas {
     }
 
     public void invertir(){
-              
-        Nodo reco=raiz;
-        while (reco.sig!=null) 
-            reco=reco.sig;
+        if (raiz!=null){      
+            Nodo reco=raiz;
+            while (reco.sig!=null) reco=reco.sig;
         
-        Nodo anterior=reco.ant;
-        Nodo siguiente=raiz.sig;
+            Nodo anterior=reco.ant;
+            Nodo siguiente=raiz.sig;
         
-        reco.sig=raiz.sig;
-        reco.ant=null;
-        siguiente.ant=reco;
-        
-        anterior.sig=raiz;
-        raiz.ant=anterior;
-        raiz.sig=null;
+            reco.sig=raiz.sig;
+            reco.ant=null;
+            siguiente.ant=reco;
+            
+            anterior.sig=raiz;
+            raiz.ant=anterior;
+            raiz.sig=null;
+            raiz=reco;
+        }    
     }
 
     public void borrarDuplicados(){
         if (raiz!=null){
             Nodo reco=raiz.sig;
             while (reco!=null){
-                if (reco.info==raiz.info){
+                if (reco.info.equals(raiz.info)){
                     Nodo anterior=reco.ant;
                     Nodo siguiente=reco.sig;
 
@@ -105,13 +106,13 @@ public class DesemListas {
         }
     }
 
-    public void imprimir(boolean directa){
+    public void imprimir(){
 
         Nodo reco=raiz;
         while (reco!=null){
             System.out.print(reco.info+";");
-            if (directa) reco=reco.sig;
-                else reco=reco.ant;
+            reco=reco.sig;
+            
         }
 
     }
@@ -134,27 +135,23 @@ public class DesemListas {
 
     public static void main(String[] args) {
         DesemListas miLista=new DesemListas();
-        miLista.insertar(10,20);
+        miLista.insertar(200,20);
         miLista.insertar(5,8);
         miLista.insertar(200,4);
         miLista.insertar(1,2);
-        miLista.imprimir(true);
         
-        System.out.println("\nLa suma de los elementos impares es: "+miLista.sumarImpares());
-        
-        /* ELIMINAR PARA PROBAR
-        System.out.println("\nLa lista sin los extremos: ");
+        System.out.print("\nLa lista cargada es: ");
+        miLista.imprimir();
+        System.out.println("\n\nLa suma de los elementos impares es: "+miLista.sumarImpares());
+        System.out.print("\nLa lista sin los extremos: ");
         miLista.borraExtremos();
-        miLista.imprimir(true);*/
-
-        /* ELIMINAR COMENTARIOS PARA PROBAR
+        miLista.imprimir();
         miLista.invertir();
-        System.out.println("\nLa lista con los extremos invertidos es:");
-        miLista.imprimir(false); */
-
-        /*Se tiene en cuenta la lista original, sin cambios */
+        System.out.print("\n\nLa lista con los extremos invertidos es:");
+        miLista.imprimir(); 
+        System.out.print("\n\nLa lista con los valores duplicados borrados es:");
         miLista.borrarDuplicados();
-        miLista.imprimir(true);
+        miLista.imprimir();
 
     }    
 }
