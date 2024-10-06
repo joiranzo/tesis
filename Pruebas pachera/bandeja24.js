@@ -1,5 +1,9 @@
-bjas=document.getElementsByClassName("bja24")
+bjas=document.getElementsByClassName("bja24");
 
-.forEach(element => {
-    
-});
+for (const key in object) {
+    if (Object.prototype.hasOwnProperty.call(object, key)) {
+        const element = object[key];
+        
+        element
+    }
+}
