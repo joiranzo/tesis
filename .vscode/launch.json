@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "heladeria",
+            "request": "launch",
+            "mainClass": "heladeria",
+            "projectName": "MiRepositorio_8337381f"
+        },
+        {
+            "type": "java",
             "name": "DesemListas",
             "request": "launch",
             "mainClass": "DesemListas",

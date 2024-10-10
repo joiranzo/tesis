@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('static',filename='css/bandeja24.css')}}">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- <div class="troncal">
+        <h2>Rack: {{datospag.rack}}</h2>
+        <h2>Pachera: {{datospag.pachera}}</h2>
+        <h2>{{datospag.desc}}</h2>
+        {{datospag.filas}}
+        {{datospag.columnas}}
+    </div>
+     -->
+    <div class="pachera">
+        {% for y in range(0,12):%}
+
+        <div class="">
+            <div class="descBjaCerrada" style="display:none">
+                <div class="datobja">Datos 1</div>
+                <div class="datobja">Bandeja {{y+1}}</div>
+                <div class="datobja">Datos 2</div>
+            </div>
+            <div class="bjaabierta">
+                <div class="prueba">
+                    <div>Primera</div>
+                    <!-- <div>Bandeja</div> -->
+                    <div>Segunda</div>
+                </div>
+                <div></div>
+                <!-- <div class="desc">Bja {{y+1}}</div> -->
+                <!-- <div class="primera"> -->
+                    
+                    <div class="conectores">
+                        {% for x in range(1,13): %}
+                        <div class="conector">
+                            <div class="numero">{{y*24+x}}</div>
+                            <div class="descConec">{{datospag.posiciones[y*24+x]}}</div>
+                        </div>
+                        {% endfor %}
+                    
+                <!-- </div> -->
+
+                <!-- <div class="segunda"> -->
+                    
+                    
+                        {% for x in range(13,25): %}
+                        <div class="conector">
+                            <div>{{y*24+x}}</div>
+                            <div class="descConec">{{datospag.posiciones[y*24+x]}}</div>
+                        </div>
+                        {% endfor %}
+                            
+                    </div>
+                <!-- </div> -->
+            </div>
+          
+          
+        </div>
+        {% endfor %}
+    </div>
+
+</body>
+<script src="bandeja24.js"></script>
+
+</html>
