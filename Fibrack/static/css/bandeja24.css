@@ -1,80 +1,161 @@
+body{
+    font-family: sans-serif;
+}
+.troncal{
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    border: 2px solid black;
+    border-radius: 5px;
+    margin-bottom: 5px;
+}
 .pachera{
     display: flex;
     flex-direction: column;
-    border: 2px solid black;
+    border: 2px solid red;
     border-radius: 5px;
     padding: 3px;
+    height:auto;
 }
 
-.descBjaCerrada, .bjaabierta{
+
+.bja{
     display: flex;
-    flex-direction: column;
-    border: 1px solid black;
-    margin: 1px 2px 1px 2px;
+    /* flex-direction: column; */
+    /* border: 2px solid black;  */
+    margin: 2px 2px 2px 2px;
+    border-radius: 5px;
+    /* padding: 5px; */
+    font-weight: bolder;
+    
+   
+}
+
+
+
+.identificacion{
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    border: 2px solid black; 
+    border-radius: 5px;
+    padding: 3px 0 3px 0;
     
 }
-
-.datobja{
-    text-wrap: none;
-    text-align: center;
-    background-color: red;
-}
-
-.desc, .primera, .segunda{
-    border: 1px solid black;
-    margin: 2px;
-}
-
-.desc{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-grow: 0.5;
-}
-
-.primera , .segunda{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    /* padding: 0.2em; */
-    margin: 2px 2px 2px 2px;
-    /* flex-grow: 6; */
-    flex-basis: 50%;
+.identificacion:hover{
+    background-color: aquamarine;
 }
 
 .conectores{
     display: flex;
     width: 100%;
+    /* height: 0px; */
+    /* overflow: hidden; */
+    
     
 }
 .conector{
     display: flex;
     flex-direction: column;
-    /* margin: 0.2em; */
+    margin: 0.1em;
     align-items: center;
     /* flex-grow: 2; */
     flex-basis: 50%;
     border: 1px solid black;
-    scale: 90%;
+    width: calc(95%/24);
+    /* scale: 90%; */
+    height: 3rem;
+    border-radius: 3px;
+    
 }
 .conector:hover{
     scale: 130%;
     z-index: 10;
-    background-color: aliceblue;
- 
+    /* background-color: aliceblue; */
+    margin-right: 1px;
     
 }
 .numero{
-    
+    width: 100%;
+    text-align: center;
+    /* border-radius: 5px; */
+    padding: 2px 0 2px 0;
+    font-weight: bolder;
+    font-size: small;
 }
 .descConec{
+    font-weight: bolder;
     /* padding: 0.1em 0 0.1em 0; */
     font-size: small;
     /* writing-mode: tb-rl; */
     /* rotate: 180deg; */
-    
+    width: 100%;
+    text-align: center;
+    margin: 2px 0 0 0;
    
 }
-.prueba{
-    display: flex;
+
+
+
+
+
+
+.azul{
+    background-color: blue;
+    color: white;
+}
+
+.naranja{
+    background-color: orange;
+    color: white;
+}
+
+.verde{
+    background-color: green;
+    color: white;
+}
+.marron{
+    background-color: brown;
+    color: white;
+}
+
+.gris{
+    background-color: gray;
+    color: white;
+}
+
+.blanco{
+    background-color: white;
+    color: black;
+    /* border: 1px solid black; */
+}
+
+.rojo{
+    background-color: red;
+    color: white;
+}
+
+.negro{
+    background-color: black;
+    color: white;
+}
+
+.amarillo{
+    background-color: yellow;
+    color: black;
+}
+
+.violeta{
+    background-color: violet;
+    color: black;
+}
+
+.rosa{
+    background-color: pink;
+    color: black;
+}
+
+.celeste{
+    background-color: skyblue;
+    color: black;
 }

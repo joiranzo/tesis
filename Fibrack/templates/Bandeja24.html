@@ -9,63 +9,76 @@
 </head>
 
 <body>
-    <!-- <div class="troncal">
+    <div class="troncal">
         <h2>Rack: {{datospag.rack}}</h2>
         <h2>Pachera: {{datospag.pachera}}</h2>
         <h2>{{datospag.desc}}</h2>
-        {{datospag.filas}}
-        {{datospag.columnas}}
+        <!-- {{datospag.filas}} -->
+        <!-- {{datospag.columnas}} -->
     </div>
-     -->
+    
     <div class="pachera">
         {% for y in range(0,12):%}
-
-        <div class="">
-            <div class="descBjaCerrada" style="display:none">
-                <div class="datobja">Datos 1</div>
-                <div class="datobja">Bandeja {{y+1}}</div>
-                <div class="datobja">Datos 2</div>
-            </div>
-            <div class="bjaabierta">
-                <div class="prueba">
+            <div class="bja ">
+                <!-- <div class="identificacion">
                     <div>Primera</div>
-                    <!-- <div>Bandeja</div> -->
-                    <div>Segunda</div>
-                </div>
-                <div></div>
-                <!-- <div class="desc">Bja {{y+1}}</div> -->
-                <!-- <div class="primera"> -->
-                    
-                    <div class="conectores">
-                        {% for x in range(1,13): %}
-                        <div class="conector">
-                            <div class="numero">{{y*24+x}}</div>
-                            <div class="descConec">{{datospag.posiciones[y*24+x]}}</div>
-                        </div>
-                        {% endfor %}
-                    
-                <!-- </div> -->
-
-                <!-- <div class="segunda"> -->
-                    
-                    
-                        {% for x in range(13,25): %}
-                        <div class="conector">
-                            <div>{{y*24+x}}</div>
-                            <div class="descConec">{{datospag.posiciones[y*24+x]}}</div>
-                        </div>
-                        {% endfor %}
-                            
+                    <div>
+                        {% if (y < 9) :%}
+                            Bandeja 0{{y+1}}
+                        {%else%}
+                            Bandeja {{y+1}}
+                        {% endif %}
+                    </div> 
+                    <div>Segunda</div> 
+                </div> -->
+                
+                <div class="conectores">
+                    {% for x in range(1,25): %}
+                    <div class="conector">
+                            <!-- <div>Pos. {{x}}</div> -->
+                        {% if (x==1 or x==13) : %}
+                            <div class="numero azul">
+                        {% elif (x==2 or x==14) : %}
+                            <div class="numero naranja">   
+                        {% elif (x==3 or x==15) : %}
+                            <div class="numero verde">
+                        {% elif (x==4 or x==16) : %}
+                            <div class="numero marron">        
+                        {% elif (x==5 or x==17) : %}
+                        <div class="numero gris">
+                                {% elif (x==6 or x==18 ) : %}
+                            <div class="numero blanco">
+                                {% elif (x==7 or x==19) : %}
+                            <div class="numero rojo">
+                                {% elif (x==8 or x==20) : %}
+                            <div class="numero negro">
+                                {% elif (x==9 or x==21) : %}
+                            <div class="numero amarillo">
+                                {% elif (x==10 or x==22) : %}
+                            <div class="numero violeta">
+                                {% elif (x==11 or x==23) : %}
+                            <div class="numero rosa">
+                                    {% else %}
+                                <div class="numero celeste">            
+                                    {% endif %}     
+                                    <abbr title="Pelo"  >{{y*24+x}}</abbr>
+                                    </div>
+                        {% if (y*24+x) in datospag.posiciones: %}
+                            <div class="descConec " >
+                        {% else %}
+                            <div class="descConec " >    
+                        {% endif %}    
+                            {{datospag.posiciones[y*24+x]}}
+                            </div>
                     </div>
-                <!-- </div> -->
+                    {% endfor %}
+                </div>    
+            
             </div>
-          
-          
-        </div>
         {% endfor %}
     </div>
 
 </body>
-<script src="bandeja24.js"></script>
+<script src="{{url_for('static',filename='js/bandeja24.js')}}"></script>
 
 </html>

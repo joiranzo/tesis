@@ -16,23 +16,19 @@ mydb=mysql.connector.connect(
 def home():
     
     mycursor = mydb.cursor()
-    mycursor.execute("SELECT conexiones.Posicion, destinos.DescrDestino FROM `conexiones`, `destinos` WHERE CodDestino=destinos.idDestino")
+    mycursor.execute("SELECT origenes.Descripcion, conexiones.Posicion, destinos.DescrDestino FROM `origenes`,`conexiones`, `destinos` WHERE CodDestino=destinos.idDestino and CodOrigen=origenes.idOrigen")
     myresult = mycursor.fetchall()
     
-    # insertObject={}
-    # columnNames=[column[0] for column in mycursor.description]
-    # for record in myresult:
-    #      insertObject.append(dict(zip(columnNames,record)))   
     datos={
         "rack":"AT14A",
         "pachera":1,
         "desc":"Troncal A",
         "filas":12,
         "columnas":24,
-        "posiciones": dict((x,y) for x,y in myresult)
-        
-    
+        "posiciones": dict((x,y,z) for x,y,z in myresult)
     }
+
+    mydb.close
     return render_template('Bandeja24.html',datospag=datos)
 
 if __name__ == '__main__':

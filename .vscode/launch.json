@@ -6,6 +6,27 @@
     "configurations": [
         {
             "type": "java",
+            "name": "ArbolBinario",
+            "request": "launch",
+            "mainClass": "Clase9.ArbolBinario",
+            "projectName": "MiRepositorio_8337381f"
+        },
+        {
+            "type": "java",
+            "name": "ArbolBinario",
+            "request": "launch",
+            "mainClass": "Issd.Semestre4.Ed4.Clase9.ArbolBinario",
+            "projectName": "MiRepositorio_8337381f"
+        },
+        {
+            "type": "java",
+            "name": "Recursividad1",
+            "request": "launch",
+            "mainClass": "Issd.Semestre4.Ed4.Clase8.Recursividad1",
+            "projectName": "MiRepositorio_8337381f"
+        },
+        {
+            "type": "java",
             "name": "heladeria",
             "request": "launch",
             "mainClass": "heladeria",
