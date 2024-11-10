@@ -1,4 +1,4 @@
-package Issd.Semestre4.Ed4.Clase8;
+package Clase8;
 
 public class Recursividad1 {
 
