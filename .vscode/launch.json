@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "prueba",
+            "request": "launch",
+            "mainClass": "prueba",
+            "projectName": "MiRepositorio_8337381f"
+        },
+        {
+            "type": "java",
             "name": "ArbolBinario",
             "request": "launch",
             "mainClass": "Clase9.ArbolBinario",
