@@ -4,11 +4,13 @@
     <div class="col-lg-8 offset-lg-2">
         <div class="card">
             <div class="card-body text-center">
-                <span class="titulo">Listado</span>
+                <span class="titulo">LISTADO DE CRIPTOMONEDAS</span>
                 <button class="btn btn-success float-end" routerLink="crear">Nuevo</button>
+                @if (listMonedas.length>0){
                 <table class="table table-striped mt-3">
                     <thead>
                       <tr>
+                        
                         <th scope="col">Nombre</th>
                         <th scope="col">Simbolo</th>
                         <th scope="col">Precio</th>
@@ -18,29 +20,22 @@
                     </thead>
                     <tbody>
                       <tr>
-                        <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>mdo</td>
-                        <td></td>
+                        @for (moneda of listMonedas; track $index) {
+                        <th scope="row">{{moneda.nombre}}</th>
+                        <td>{{moneda.simbolo}}</td>
+                        <td>{{moneda.precio}}</td>
+                        <td>{{moneda.var24}}</td>
+                        <td>{{moneda.var7d}}</td>
                         <td>
-                            <i class="fa-solid fa-pen-to-square text-primary"></i>
-                            <i class="fa-solid fa-trash text-danger"></i>
-                        </td>
-                      </tr>
-                      <tr>
-                        <th scope="row">2</th>
-                        <td>Jacob</td>
-                        <td>Thornton</td>
-                        <td>fat</td>
-                      </tr>
-                      <tr>
-                        <th scope="row">3</th>
-                        <td colspan="2">Larry the Bird</td>
-                        <td>twitter</td>
+                            <i [routerLink]="['/editar',moneda._id]" class="fa-solid fa-pen-to-square text-primary"></i>
+                            <i (click)='eliminarMoneda(moneda._id)' class="fa-solid fa-trash text-danger"></i>
+                        </td>}
                       </tr>
                     </tbody>
-                  </table>
+                  </table>}
+                  @else {
+                    <h5>No hay elementos que mostrar</h5>
+                  }
             </div>
 
         </div>
