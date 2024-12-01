@@ -19,8 +19,9 @@
                       </tr>
                     </thead>
                     <tbody>
+                      @for (moneda of listMonedas; track $index) {
                       <tr>
-                        @for (moneda of listMonedas; track $index) {
+                        
                         <th scope="row">{{moneda.nombre}}</th>
                         <td>{{moneda.simbolo}}</td>
                         <td>{{moneda.precio}}</td>
@@ -29,8 +30,8 @@
                         <td>
                             <i [routerLink]="['/editar',moneda._id]" class="fa-solid fa-pen-to-square text-primary"></i>
                             <i (click)='eliminarMoneda(moneda._id)' class="fa-solid fa-trash text-danger"></i>
-                        </td>}
-                      </tr>
+                        </td>
+                      </tr>}
                     </tbody>
                   </table>}
                   @else {
