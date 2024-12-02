@@ -2,7 +2,7 @@ import User from'../models/users.js'
 import bcrtypt from 'bcryptjs';
 import {createAccessToken} from '../libs/jwt.js'
 
-export const register=async (req,res) =>{
+export const registrar=async (req,res) =>{
     
     const {nombre,apellido,email,contrasena}=req.body
     try {
@@ -56,7 +56,3 @@ export const logout= (req,res) =>{
     return res.sendStatus(200)
 }
 
-export const profile= (req,res) =>{
-   console.log(req.user)
-    return res.sendStatus(200)
-}
