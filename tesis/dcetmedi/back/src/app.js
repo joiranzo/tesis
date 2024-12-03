@@ -6,6 +6,7 @@ import rolRouter from './routers/rol.routers.js'
 import tipoNovedadRouter from './routers/tipoNovedad.routers.js	'
 import subRegionRouter from './routers/subRegion.routers.js'
 import sectorOperativoRouter from './routers/sectorOperativo.routers.js' 
+import motivoRouter from './routers/motivo.routers.js'
 
 const app=express()
 
@@ -18,4 +19,5 @@ app.use('/api',rolRouter)          //rutas de la aplicacion
 app.use('/api',tipoNovedadRouter)          //rutas de la aplicacion
 app.use('/api',subRegionRouter)            //rutas de la aplicacion
 app.use('/api',sectorOperativoRouter)            //rutas de la aplicacion
+app.use('/api',motivoRouter)            //rutas de la aplicacion
 export default app

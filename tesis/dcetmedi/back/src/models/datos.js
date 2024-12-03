@@ -3,6 +3,7 @@ import tipoRol from './tipoRol.js'
 import tipoNovedad from './tipoNovedad.js'
 import tipoSubRegion from './tipoSubregion.js'
 import tipoSectorOperativo from './tipoSectorOperativo.js'
+import tipoMotivo from './tipoMotivo.js'
 
 
 const datosSchema=new mongoose.Schema({
@@ -10,6 +11,7 @@ const datosSchema=new mongoose.Schema({
     tiposNovedades:[tipoNovedad],
 	subRegiones:[tipoSubRegion],
     sectoresOperativos:[tipoSectorOperativo],
+    motivos:[tipoMotivo],
     gremios:[{nombre:{type:String , require:true , trim:true},
              codigos:[{type:Number}]}]
     
