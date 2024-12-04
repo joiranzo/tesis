@@ -1,13 +1,10 @@
-import dato from "../models/datos.js";
+import dato from "../schemas/datos.js";
 import tipoMotivo from "../models/tipoMotivo.js";
 import { capitalizar, duplicado } from "../middlewares/funcionesPropias.js";
 
 
 export const registrarMotivo = async (req, res) => {
-  const motivo = tipoMotivo;
-  motivo._id = capitalizar(req.body._id)
-  motivo.descripcion=capitalizar(req.body.descripcion)
-
+  
   try {
     let actualDato = await dato.findOne();
 
@@ -15,13 +12,17 @@ export const registrarMotivo = async (req, res) => {
       actualDato = new dato();
     }
 
-    if (duplicado(actualDato.motivos, motivo._id)) {
-      return res.status(409).json({ message: "Valor no permitido, duplicado" });
+    if (duplicado(actualDato.motivos, req.body._id)) {
+      return res
+        .status(409).
+        json({ message: "Valor no permitido, duplicado" });
     }
 
-    actualDato.motivos.push(motivo);
-    const savedDato = await actualDato.save();
-    return res.status(200).json({ message: motivo._id });
+    actualDato.motivos.push(req.body);
+    let savedDato = await actualDato.save();
+    return res
+      .status(200)
+      .send(savedDato.motivos);
   } catch (error) {
     res.status(500).json({ message: error.message });
   }

@@ -20,7 +20,8 @@ export function SubRegionDuplicado (arreglo,valor){
 
 //Da el formato capitalizado a un texto
 export function capitalizar(texto) {
-     return texto.charAt(0).toUpperCase() + texto.slice(1).toLowerCase();
+    
+   return texto.charAt(0).toUpperCase() + texto.slice(1).toLowerCase();
    }
    
  
