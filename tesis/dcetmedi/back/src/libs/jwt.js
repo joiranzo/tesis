@@ -9,3 +9,4 @@ export function createAccessToken (payload){
         resolve(token)
     }
 )})}
+

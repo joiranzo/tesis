@@ -1,9 +1,8 @@
 import mongoose from "mongoose";
 
 
-const tipoDeLicencia = mongoose.Schema(({
+const tipoGuardia = mongoose.Schema(({
     _id:{type:String , require:true , trim:true},
-    tipo:{type:String , require:true , trim:true},
     fechaInicio:{type:String , require:true , trim:true},
     duracion:{type:Number , require:true , trim:true},
     estados:{type:String , require:true , trim:true}
@@ -11,4 +10,4 @@ const tipoDeLicencia = mongoose.Schema(({
 
 
 
-export default tipoDeLicencia
+export default tipoGuardia

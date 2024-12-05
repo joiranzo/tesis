@@ -10,6 +10,36 @@ import { authRequiered } from '../middlewares/validateToken.js'
 
 const router=Router()
 
+//rutas de los roles
+router.post('/roles',authRequiered, registrarRol)
+router.get('/roles',authRequiered, obtenerRole)
+router.delete('/roles',authRequiered, borrarRol)
+router.put('/roles',authRequiered, modificarRol)
+
+//Rutas de los tipos de novedad
+router.post('/tiponovedad',authRequiered, registrarTipoNovedad)
+router.get('/tiponovedad',authRequiered, obtenerTiposNovedades)
+router.delete('/tiponovedad',authRequiered, borrarTipoNovedad)
+router.put('/tiponovedad',authRequiered, modificarTipoNovedad)
+
+//rutas de las subregiones
+router.post('/subregion',authRequiered, registrarSubRegion)
+router.get('/subregion',authRequiered, obtenerSubRegion)
+router.delete('/subregion',authRequiered, borrarSubRegion)
+router.put('/subregion',authRequiered, modificarSubRegion)
+
+//rutas de los sectores operativos
+router.post('/sectoroperativo',authRequiered, registrarSectorOperativo)
+router.get('/sectoroperativo',authRequiered, obtenerSectorOperativo)
+router.delete('/sectoroperativo',authRequiered, borrarSectorOperativo)
+router.put('/sectoroperativo',authRequiered, modificarSectorOperativo)
+
+//Rutas de los motivos
+router.post('/Motivos',authRequiered, registrarMotivo)
+router.get('/Motivos',authRequiered, obtenerMotivo)
+router.delete('/Motivos',authRequiered, borrarMotivo)
+router.put('/Motivos',authRequiered, modificarMotivo)
+
 //rutas de los gremios
 router.post('/gremios',authRequiered, registrarGremio)
 router.get('/gremios',authRequiered, obtenerGremio)
@@ -22,40 +52,22 @@ router.get('/gremios/tipo',authRequiered, obtenerTipo)
 router.delete('/gremios/tipo',authRequiered, borrarTipo)
 router.put('/gremios/modificartipo',authRequiered, modificarTipo)
 
-//rutas de los roles
-router.post('/roles',authRequiered, registrarRol)
-router.get('/roles',authRequiered, obtenerRole)
-router.delete('/roles',authRequiered, borrarRol)
-router.put('/roles',authRequiered, modificarRol)
-
-//rutas de los sectores operativos
-router.post('/sectoroperativo',authRequiered, registrarSectorOperativo)
-router.get('/sectoroperativo',authRequiered, obtenerSectorOperativo)
-router.delete('/sectoroperativo',authRequiered, borrarSectorOperativo)
-router.put('/sectoroperativo',authRequiered, modificarSectorOperativo)
-
-//rutas de las subregiones
-router.post('/subregion',authRequiered, registrarSubRegion)
-router.get('/subregion',authRequiered, obtenerSubRegion)
-router.delete('/subregion',authRequiered, borrarSubRegion)
-router.put('/subregion',authRequiered, modificarSubRegion)
-
-//Rutas de los tipos de novedad
-router.post('/tiponovedad',authRequiered, registrarTipoNovedad)
-router.get('/tiponovedad',authRequiered, obtenerTiposNovedades)
-router.delete('/tiponovedad',authRequiered, borrarTipoNovedad)
-router.put('/tiponovedad',authRequiered, modificarTipoNovedad)
-
-//Rutas de los motivos
-router.post('/Motivos',authRequiered, registrarMotivo)
-router.get('/Motivos',authRequiered, obtenerMotivo)
-router.delete('/Motivos',authRequiered, borrarMotivo)
-router.put('/Motivos',authRequiered, modificarMotivo)
-
-//Rutas de los motivos
+//Rutas de los tipos de licenica
 router.post('/Motivos',authRequiered, registrarTipoLicencia)
 router.get('/Motivos',authRequiered, obtenerTipoLicencia)
 router.delete('/Motivos',authRequiered, borrarTipoLicencia)
 router.put('/Motivos',authRequiered, modificarTipoLicencia)
+
+//Rutas de los encargados de tiempo
+
+//Rutas de los feriados
+
+
+
+
+
+
+
+
 
 export default router

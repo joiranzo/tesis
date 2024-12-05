@@ -1,27 +1,28 @@
 import {Router} from 'express'
-import { registrarEmpleado,obtenerEmpleado,borrarEmpleado,modificarEmpleado } from '../controllers/empleado.Controller.js'
 import { authRequiered } from '../middlewares/validateToken.js'
-
+import { registrarPlataforma,obtenerPlataforma,modificarPlataforma,borrarPlataforma,
+         registrarStream,obtenerStream,modificarStream,borrarStream
+        } from '../controllers/plataforma.Controller.js'
 const router=Router()
+//Plataformas
+router.post('/plataformas',authRequiered, registrarPlataforma)
+router.get('/plataformas',authRequiered, obtenerPlataforma)
+router.delete('/plataformas',authRequiered, borrarPlataforma)
+router.put('/plataformas',authRequiered, modificarPlataforma)
 
-//registra un nuevo rol
-router.post('/empleados',authRequiered, registrarEmpleado)
+//Streams
+router.post('/streams',authRequiered, registrarStream)
+router.get('/streams',authRequiered, obtenerStream)
+router.delete('/streams',authRequiered, borrarStream)
+router.put('/streams',authRequiered, modificarStream)
 
-//devuelve todos los gremios
-router.get('/empleados',authRequiered, obtenerEmpleado)
+//Empleados
 
-//borra un rol especificado en el parametro id
-router.delete('/empleados',authRequiered, borrarEmpleado)
+//Rotacion
 
-router.put('/empleados',authRequiered, modificarEmpleado)
+//Novedades
 
-// router.post('/gremios/tipo',authRequiered, registrarTipo)
+//Licencias
 
-// //devuelve todos los gremios
-// router.get('/gremios/tipo',authRequiered, obtenerTipo)
-
-// //borra un rol especificado en el parametro id
-// router.delete('/gremios/tipo',authRequiered, borrarTipo)
-
-// router.put('/gremios/modificartipo',authRequiered, modificarTipo)
+//Guardias
 export default router
