@@ -7,14 +7,14 @@ import plataforma from "../schemas/plataforma.js";
 export const registrarPlataforma = async (req, res) => {
   try {
     let actual = await plataforma.findOne({
-      nombre: req.body.nombre,
+      _id: req.body._id,
     });
 
     if (actual == null) {
       actual = new plataforma();
     } else return res.status(409).json({ message: "Error Valor duplicado" });
 
-    actual.nombre = req.body.nombre;
+    actual._id = req.body._id;
     actual.po = null;
     let saved = await actual.save();
     return res.status(200).send(saved);
@@ -78,7 +78,7 @@ export const modificarPlataforma = async (req, res) => {
 
 export const registrarStream = async (req, res) => {
   try {
-    let plat = await plataforma.findOne({ nombre: id });
+    let plat = await plataforma.findOne({ _id: req.query.plat });
     if (plat == null) {
       return res
         .status(409)

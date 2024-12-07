@@ -6,7 +6,7 @@ export const registrarEmpleado = async (req, res) => {
   
   try {
     let plata = await plataforma.findOne({
-      nombre: req.query.plat,
+      _id: req.query.plat,
     });
     
     let stream=plata.streams.id(req.query.stre)
