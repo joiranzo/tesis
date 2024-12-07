@@ -1,25 +1,29 @@
+
 import plataforma from "../schemas/plataforma.js";
 
 //Regstramos nuevo empleado
 export const registrarEmpleado = async (req, res) => {
-    
+  
   try {
-    let actualPlataforma = await plataforma.findOne();
-
-    if (actualPlataforma == null) {
-      actualPlataforma = new plataforma();
-    }
-   
-    //verificamos que no se encuentre duplicado
-    if (actualPlataforma.empleados.id(req.body._id)!=null) {
-      return res
-        .status(409)
-        .json({ message: "Valor no permitido, duplicado" });
-    }
+    let plata = await plataforma.findOne({
+      nombre: req.query.plat,
+    });
+    
+    let stream=plata.streams.id(req.query.stre)
+    // if (actualPlataforma == null) {
+    //   actualPlataforma = new plataforma();
+    // }
+    console.log(stream)
+    // //verificamos que no se encuentre duplicado
+    // if (actualPlataforma.empleados.id(req.body._id)!=null) {
+    //   return res
+    //     .status(409)
+    //     .json({ message: "Valor no permitido, duplicado" });
+    // }
     
     //grabamos nuevo valor
-    actualPlataforma.empleados.push(req.body);
-    let savedPlataforma = await actualPlataforma.save();
+    stream.empleados.push(req.body);
+    let savedPlataforma = await plata.save();
     return res
       .status(200)
       .send(savedPlataforma.empleados);

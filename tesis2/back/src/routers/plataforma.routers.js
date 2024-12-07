@@ -3,6 +3,7 @@ import { authRequiered } from '../middlewares/validateToken.js'
 import { registrarPlataforma,obtenerPlataforma,modificarPlataforma,borrarPlataforma,
          registrarStream,obtenerStream,modificarStream,borrarStream
         } from '../controllers/plataforma.Controller.js'
+import { registrarEmpleado } from '../controllers/empleado.Controller.js'
 const router=Router()
 //Plataformas
 router.post('/plataformas',authRequiered, registrarPlataforma)
@@ -17,7 +18,7 @@ router.delete('/streams',authRequiered, borrarStream)
 router.put('/streams',authRequiered, modificarStream)
 
 //Empleados
-
+router.post('/empleados',authRequiered, registrarEmpleado)
 //Rotacion
 
 //Novedades
