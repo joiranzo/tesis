@@ -1,19 +1,25 @@
 
-import plataforma from "../schemas/plataforma.js";
+import coleccion from "../schemas/plataforma.js";
 
 //Regstramos nuevo empleado
 export const registrarEmpleado = async (req, res) => {
   
   try {
-    let plata = await plataforma.findOne({
+    let plataforma = await coleccion.findOne({
       nombre: req.query.plat,
     });
-    
+    if (plataforma == null) {
+        return res
+        .status(409)
+        .json({ message: 'No existe la plataforma ${req.query.plat}' });
+    }
     let stream=plata.streams.id(req.query.stre)
-    // if (actualPlataforma == null) {
-    //   actualPlataforma = new plataforma();
-    // }
-    console.log(stream)
+    if (plataforma == null) {
+      return res
+      .status(409)
+      .json({ message: 'No existe la plataforma ${req.query.plat}' });
+    }
+      console.log(stream)
     // //verificamos que no se encuentre duplicado
     // if (actualPlataforma.empleados.id(req.body._id)!=null) {
     //   return res
