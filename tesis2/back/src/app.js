@@ -4,8 +4,10 @@ import cookieParser from 'cookie-parser'
 import authRouter from './routers/autho.routers.js'
 import datoRouter from './routers/dato.routers.js'
 import plataformaRouter from './routers/plataforma.routers.js'
-const app=express()
+import cors from 'cors'
 
+const app=express()
+app.use(cors())
 app.use(morgan('dev'))              //para ver por consola las peticiones http
 app.use(express.json())             //Para leer json
 app.use(cookieParser())             //Para leer cookies

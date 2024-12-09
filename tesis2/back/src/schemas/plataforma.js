@@ -12,4 +12,4 @@ const plataformaSchema=new mongoose.Schema({
 
 // plataformaSchema.index({ nombre: 1, type: -1 })
 
-export default mongoose.model('squemaPlataforma',plataformaSchema,'medi')
+export default mongoose.model('squemaPlataforma',plataformaSchema,'plataformas')

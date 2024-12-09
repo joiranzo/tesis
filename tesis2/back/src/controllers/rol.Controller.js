@@ -41,7 +41,7 @@ export const obtenerRole = async (req, res) => {
 
     return res
       .status(200)
-      .send(actualDato.roles);
+      .json(actualDato.roles);
   } catch (error) {
     res
       .status(500)
@@ -62,6 +62,7 @@ export const borrarRol = async (req, res) => {
     }
 
     let doc = actualDato.roles.id(req.query.id);
+  
     let indice = actualDato.roles.indexOf(doc);
     if (indice == -1) {
       return res
