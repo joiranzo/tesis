@@ -4,11 +4,11 @@ import tipoEmpleado from "../models/tipoEmpleado.js";
 
 
 const plataformaSchema=new mongoose.Schema({
-     nombre:{type:String, require:true , trim:true},
+     _id:{type:String, require:true , trim:true, unique:true, index:true},
      po:{type:String, require:true , trim:true},
      streams:[tipoStream],
      empleadosLibres:[tipoEmpleado]
-    });
+    },{_id:false});
 
 // plataformaSchema.index({ nombre: 1, type: -1 })
 
